@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import MainTemplate from './components/templates/MainTemplate';
 import HomeView from './views/HomeView';
 import StudentView from './views/StudentView';
@@ -24,36 +19,19 @@ const App = () => {
     <div className="App">
       <Head />
 
-      <Router>
-        <MainTemplate>
-          <Switch>
-            <Route exact path="/">
-              <Redirect to={ROUTE_NAME.home} />
-            </Route>
-            <Route exact path={ROUTE_NAME.home}>
-              <HomeView />
-            </Route>
-            <Route exact path={ROUTE_NAME.student}>
-              <StudentView />
-            </Route>
-            <Route exact path={ROUTE_NAME.tasks}>
-              <TasksView />
-            </Route>
-            <Route exact path={ROUTE_NAME.awards}>
-              <AwardsView />
-            </Route>
-            <Route exact path={ROUTE_NAME.consequences}>
-              <ConsequencesView />
-            </Route>
-            <Route exact path={ROUTE_NAME.info}>
-              <InfoView />
-            </Route>
-            <Route exact path={ROUTE_NAME.settings}>
-              <SettingsView />
-            </Route>
-          </Switch>
+     
+        <MainTemplate>   
+        <Routes>      
+            <Route exact path={ROUTE_NAME.home} element={<HomeView />}/>
+            <Route path={ROUTE_NAME.student}  element={<StudentView />}/>
+            <Route exact path={ROUTE_NAME.tasks}  element={<TasksView />}/>
+            <Route exact path={ROUTE_NAME.awards} element={<AwardsView />}/>
+            <Route exact path={ROUTE_NAME.consequences} element={<ConsequencesView/>}/>
+            <Route exact path={ROUTE_NAME.info}element={<InfoView />}/>
+            <Route exact path={ROUTE_NAME.settings}element={<SettingsView />}/>
+            </Routes>
         </MainTemplate>
-      </Router>
+      
     </div>
   );
 };

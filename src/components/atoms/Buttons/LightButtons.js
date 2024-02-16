@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import PLUS_ICON from '../../../images/icons/plus.svg';
-import DELETE_ICON from '../../../images/icons/delete.svg';
-import EDIT_ICON from '../../../images/icons/edit.svg';
+import PLUS_ICON from '../../../images/icons/dist/Plus';
+import DELETE_ICON from '../../../images/icons/dist/Delete';
+import EDIT_ICON from '../../../images/icons/dist/Edit';
 
 const LightButton = styled.button`
   color: ${({ theme }) => theme.primary};
@@ -32,19 +32,19 @@ const LightButton = styled.button`
 `;
 
 export const AddButton = styled(LightButton)`
-  background-image: url(${PLUS_ICON});
+  background-image: url(${PLUS_ICON()});
 `;
 
 export const DeleteButtonText = styled(LightButton)`
-  background-image: url(${DELETE_ICON});
+  background-image: url(${DELETE_ICON()});
 `;
 
 export const DeleteButton = styled(LightButton)`
-  background-image: url(${DELETE_ICON});
+  background-image: url(${DELETE_ICON()});
   padding-left: 15px;
 `;
 
 export const EditButton = styled(LightButton)`
-  background-image: url(${EDIT_ICON});
+  background-image: url(${EDIT_ICON()});
   padding-left: 15px;
 `;

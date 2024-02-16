@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Paragraph from "../../atoms/Paragraph/Paragraph";
 import ProfileImage from "../../atoms/ProfileImage/ProfileImage";
 import styled from "styled-components";
-import DEFAULT_IMAGE from "../../../images/icons/profile-user.svg";
+import DEFAULT_IMAGE from "../../../images/icons/dist/ProfileUser";
 
 const StyledStudentCard = styled(Link)`
   position: relative;

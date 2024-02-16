@@ -44,7 +44,7 @@ const PointsView = () => {
           {!isTasksLoading && !isTasksError && (
             <CustomSelect
               title="Wybierz zachowanie"
-              data={tasks.filter((task) => task.student == id)}
+              data={tasks.filter((task) => task.student === id)}
               btnTitle="Przyznaj punkty"
             />
           )}

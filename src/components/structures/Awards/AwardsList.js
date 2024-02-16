@@ -21,7 +21,7 @@ const AwardsList = ({awards, studentId}) => {
   const [currentPrize, setCurrentPrize] = useState(initialFormState);  
 
  useEffect(() => {
-  const filteredPrizes = prizes.filter(prize => prize.student == currentStudent)
+  const filteredPrizes = prizes.filter(prize => prize.student === currentStudent)
   setPrizes(filteredPrizes)
 }, []) 
  

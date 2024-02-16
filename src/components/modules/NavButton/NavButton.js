@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import Paragraph from "../../atoms/Paragraph/Paragraph";
-import DEFAULT_IMAGE from "../../../images/icons/profile-user.svg";
+import DEFAULT_IMAGE from "../../../images/icons/dist/ProfileUser";
 
 const StyledNavLink = styled(NavLink)`
   width: 60px;

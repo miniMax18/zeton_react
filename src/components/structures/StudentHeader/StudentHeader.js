@@ -1,9 +1,9 @@
-import React from "react";
+//import React from "react";
 import styled from "styled-components";
 import Paragraph from "../../atoms/Paragraph/Paragraph";
 import ProfileImage from "../../atoms/ProfileImage/ProfileImage";
-import DEFAULT_IMAGE from "../../../images/icons/profile-user.svg";
-import STAR_ICON from "../../../images/icons/star.svg";
+import DEFAULT_IMAGE from "../../../images/icons/dist/ProfileUser";
+import STAR_ICON from "../../../images/icons/dist/Star";
 import ReturnButton from "../../atoms/Buttons/ReturnButton";
 import { NavLink } from "react-router-dom";
 

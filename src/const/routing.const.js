@@ -1,5 +1,5 @@
 export const ROUTE_NAME = {
-    home: '/home',
+    home: '/',
     student: '/:id',
     tasks: '/:id/tasks',
     awards: '/:id/awards',

@@ -17,7 +17,7 @@ const PointsList = ({tasksList, studentId}) => {
   const [currentStudent, setCurrentStudent] = useState(studentId)
 
   useEffect(() => {
-    const filteredTasks = tasks.filter(task => task.student == currentStudent)
+    const filteredTasks = tasks.filter(task => task.student === currentStudent)
     setTasks(filteredTasks)
   }, [])
 

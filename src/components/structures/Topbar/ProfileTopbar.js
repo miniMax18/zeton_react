@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import DEFAULT_IMAGE from "../../../images/icons/profile-user.svg";
-import STAR_ICON from "../../../images/icons/star.svg";
+import DEFAULT_IMAGE from "../../../images/icons/dist/ProfileUser";
+import STAR_ICON from "../../../images/icons/dist/Star";
 import ProfileImage from "../../atoms/ProfileImage/ProfileImage";
 
 const StyledProfileTopbar = styled.header`
