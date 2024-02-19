@@ -24,9 +24,9 @@
     "swr": "^2.2.4"
   },
   "scripts": {
-    "prestart": "npx @svgr/cli --out-dir src/images/icons/dist -- src/images/icons && react-scripts start",
+    "pre-start": "npx @svgr/cli --out-dir src/images/icons/dist -- src/images/icons && react-scripts start",
     "start": "react-scripts start",
-    "prebuild": "npx @svgr/cli --out-dir src/images/icons/dist -- src/images/icons && react-scripts build",
+    "pre-build": "npx @svgr/cli --out-dir src/images/icons/dist -- src/images/icons && react-scripts build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
