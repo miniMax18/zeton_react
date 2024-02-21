@@ -92,7 +92,7 @@ const CustomSelect = ({ title, data, btnTitle }) => {
             onClick={toggling}
             role="button"
             aria-labelledby="dropdown-header"
-            tabindex="0"
+            tabIndex="0"
             aria-haspopup="listbox"
           >
             <SelectHeader text={selectedHeader} />
@@ -103,7 +103,7 @@ const CustomSelect = ({ title, data, btnTitle }) => {
               <DropdownList>
                 {(data || []).map((option) => (
                   <ListItem
-                    tabindex="0"
+                    tabIndex="0"
                     onClick={onOptionClicked(option, title)}
                     key={option.id}
                     role="option"

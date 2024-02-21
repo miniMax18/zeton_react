@@ -1,5 +1,5 @@
-import {ReactComponent as Logosvg} from "src/images/icons/LOGO.svg"
+import { ReactSVG } from 'react-svg'
 const SvgLogo = (props) => {
-  return <Logosvg/>
+  return <ReactSVG src={"../LOGO.svg"}/>
 }
 export default SvgLogo;

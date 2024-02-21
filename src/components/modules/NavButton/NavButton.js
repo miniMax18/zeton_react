@@ -37,7 +37,6 @@ const StyledParagraph = styled(Paragraph)`
 const StyledIcon = styled.img`
   height: 30px;
   width: 30px;
-
   @media only screen and (max-width: ${({ theme }) => theme.mediaMaxSize.xs}) {
     height: 20px;
     width: 20px;
@@ -46,7 +45,7 @@ const StyledIcon = styled.img`
 
 const NavButton = ({ link, image, text }) => (
   <StyledNavLink to={link}>
-    <StyledIcon src={image ? image : DEFAULT_IMAGE} />
+    <StyledIcon style={{background: image? image: DEFAULT_IMAGE}}/>
     <StyledParagraph>{text}</StyledParagraph>
   </StyledNavLink>
 );
