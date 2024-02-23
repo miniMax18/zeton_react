@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Routes, Route } from 'react-router-dom';
+import MainTemplate from './components/templates/MainTemplate';
+import HomeView from './views/HomeView';
+import StudentView from './views/StudentView';
+import TasksView from './views/TasksView';
+import InfoView from './views/InfoView';
+import AwardsView from './views/AwardsView';
+import ConsequencesView from './views/ConsequencesView';
+import SettingsView from './views/SettingsView';
+import Head from './Head';
+import { ROUTE_NAME } from './const/routing.const';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  // const [loggedIn, addLoggedIn] = useState(true);
+  // console.log(loggedIn);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="App">
+      <Head />
 
-export default App
+     
+        <MainTemplate>   
+        <Routes>      
+            <Route exact path={ROUTE_NAME.home} element={<HomeView />}/>
+            <Route path={ROUTE_NAME.student}  element={<StudentView />}/>
+            <Route exact path={ROUTE_NAME.tasks}  element={<TasksView />}/>
+            <Route exact path={ROUTE_NAME.awards} element={<AwardsView />}/>
+            <Route exact path={ROUTE_NAME.consequences} element={<ConsequencesView/>}/>
+            <Route exact path={ROUTE_NAME.info}element={<InfoView />}/>
+            <Route exact path={ROUTE_NAME.settings}element={<SettingsView />}/>
+            </Routes>
+        </MainTemplate>
+      
+    </div>
+  );
+};
+
+export default App;
