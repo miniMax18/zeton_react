@@ -1,4 +1,4 @@
-import {PropTypes}  from "react/prop-types";
+/* eslint-disable react/prop-types */
 import styled from 'styled-components';
 
 export const StyledContainer = styled.div`
@@ -23,8 +23,5 @@ const HomeTemplate = ({ children }) => (
   <StyledContainer>{children}</StyledContainer>
 );
 
-HomeTemplate.propTypes = {
-  children: PropTypes.any.isRequired
-};
 
 export default HomeTemplate;

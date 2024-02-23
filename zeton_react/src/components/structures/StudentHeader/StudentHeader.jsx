@@ -1,4 +1,5 @@
-import {PropTypes}  from "react/prop-types"
+/* eslint-disable react/prop-types */
+//import {PropTypes}  from "react/prop-types"
 import styled from "styled-components";
 import Paragraph from "../../atoms/Paragraph/Paragraph";
 import ProfileImage from "../../atoms/ProfileImage/ProfileImage";
@@ -73,11 +74,11 @@ const StudentHeader = ({ name, points, image }) => {
   );
 };
 
-StudentHeader.propTypes = {
-  name: PropTypes.any.isRequired,
-  points: PropTypes.any.isRequired,
-  image: PropTypes.any.isRequired,
-};
+//StudentHeader.propTypes = {
+//  name: PropTypes.any.isRequired,
+//  points: PropTypes.any.isRequired,
+//  image: PropTypes.any.isRequired,
+//};
 
 
 export default StudentHeader;

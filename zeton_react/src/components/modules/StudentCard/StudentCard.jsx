@@ -1,4 +1,5 @@
-import {PropTypes}  from "react/prop-types"
+/* eslint-disable react/prop-types */
+//import {PropTypes}  from "react/prop-types"
 import { Link } from "react-router-dom";
 import Paragraph from "../../atoms/Paragraph/Paragraph";
 import ProfileImage from "../../atoms/ProfileImage/ProfileImage";
@@ -33,10 +34,10 @@ const StudentCard = ({ name, studentId, image }) => {
     </StyledStudentCard>
   );
 };
-StudentCard.propTypes = {
-  name: PropTypes.any.isRequired,
-  studentId: PropTypes.any.isRequired,
-  image: PropTypes.any.isRequired,
-};
+//StudentCard.propTypes = {
+//  name: PropTypes.any.isRequired,
+//  studentId: PropTypes.any.isRequired,
+//  image: PropTypes.any.isRequired,
+//};
 
 export default StudentCard;

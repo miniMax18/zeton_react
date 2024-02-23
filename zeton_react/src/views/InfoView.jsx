@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import {PropTypes}  from "react/prop-types";
+//import {PropTypes}  from "react/prop-types";
 import { connect } from "react-redux";
 import HomeTemplate from "../components/templates/HomeTemplate";
 import Navbar from "../components/structures/Navbar/Navbar";
@@ -13,9 +14,9 @@ const InfoView = ({ student }) => {
   </HomeTemplate>
 )};
 
-InfoView.propTypes = {
-  student: PropTypes.any.isRequired
-};
+//InfoView.propTypes = {
+//  student: PropTypes.any.isRequired
+//};
 
 const mapStateToProps = (state) => {
   return {

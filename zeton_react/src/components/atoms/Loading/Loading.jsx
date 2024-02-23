@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const StyledLoading = styled.div`
@@ -12,10 +11,10 @@ const StyledLoadingElem = styled.div`
   width: 15px;
   margin: 7px;
   border-radius: 50%;
-  animation: ${({ pulsar }) => {
-    if(pulsar === "one") {return "pulsar 0.6s infinite alternate"};
-    if(pulsar === "two") {return "pulsar 0.6s 0.2s infinite alternate"};
-    if(pulsar === "three") {return "pulsar 0.6s 0.4s infinite alternate"};
+  animation: ${( {pulsar} ) => {
+    if(pulsar === "one") {return "pulsar 0.6s infinite alternate"}
+    if(pulsar === "two") {return "pulsar 0.6s 0.2s infinite alternate"}
+    if(pulsar === "three") {return "pulsar 0.6s 0.4s infinite alternate"}
 }};  
 
   @media only screen and (max-width: ${({ theme }) => theme.mediaMaxSize.xs}) {

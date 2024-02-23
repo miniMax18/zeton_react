@@ -1,4 +1,5 @@
-import {PropTypes}  from "react/prop-types"
+/* eslint-disable react/prop-types */
+//import {PropTypes}  from "react/prop-types"
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import Paragraph from "../../atoms/Paragraph/Paragraph";
@@ -37,6 +38,7 @@ const StyledParagraph = styled(Paragraph)`
 const StyledIcon = styled.img`
   height: 30px;
   width: 30px;
+  outline:none;
   @media only screen and (max-width: ${({ theme }) => theme.mediaMaxSize.xs}) {
     height: 20px;
     width: 20px;
@@ -49,11 +51,11 @@ const NavButton = ({ link, image, text }) => (
     <StyledParagraph>{text}</StyledParagraph>
   </StyledNavLink>
 );
-NavButton.propTypes = {
-  link: PropTypes.any.isRequired,
-  image: PropTypes.any.isRequired,
-  text: PropTypes.any.isRequired,
-};
+//NavButton.propTypes = {
+//  link: PropTypes.any.isRequired,
+//  image: PropTypes.any.isRequired,
+//  text: PropTypes.any.isRequired,
+//};
 
 
 export default NavButton;

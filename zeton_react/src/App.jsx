@@ -10,7 +10,7 @@ import SettingsView from './views/SettingsView';
 import Head from './Head';
 import { ROUTE_NAME } from './const/routing.const';
 
-const App = () => {
+function App(){
   // const [loggedIn, addLoggedIn] = useState(true);
   // console.log(loggedIn);
 
@@ -33,6 +33,6 @@ const App = () => {
       
     </div>
   );
-};
+}
 
 export default App;

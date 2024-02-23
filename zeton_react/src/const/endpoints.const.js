@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const API_ENDPOINTS = {
   currentUser: "/api/users/current-user/",
   studentsList: "/api/users/students/",

@@ -40,7 +40,7 @@ const SettingsView = () => {
         {isAwardsLoading && !isAwardsError && <Loading />}
         {showPrizes && <AwardsList awards={awards} studentId={id} />}
         <ButtonBar onClick={handlePoints} text="Zachowania" />
-        {isTasksLoading && !isTasksError && <Loading />}
+        {isTasksLoading && !isTasksError ? <Loading />: "Nie działa"}
         {showPoints && <PointsList tasksList={tasks} studentId={id} />}
         <ButtonBar text="Konsekwencje" />
         <ButtonBar text="Informacje o dziecku" />

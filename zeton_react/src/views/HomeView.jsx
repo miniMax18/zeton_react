@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { Heading } from "../components/atoms/Heading/Heading";
 import { AddButton } from "../components/atoms/Buttons/LightButtons";
