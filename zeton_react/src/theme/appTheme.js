@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 export const theme = {
   background: "#ffffff",
   grey: "#d8d8d8",

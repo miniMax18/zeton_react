@@ -23,9 +23,10 @@ const SettingsView = () => {
   const { tasks, isTasksLoading, isTasksError} = useTasks(id)
   
   const [showPrizes, setShowPrizes] = useState(false);
-  const handlePrizes = () => setShowPrizes(!showPrizes);
+  //const handlePrizes = () => setShowPrizes(!showPrizes);
   const [showPoints, setShowPoints] = useState(false);
-  const handlePoints = () => setShowPoints(!showPoints);
+  //const handlePoints = () => setShowPoints(!showPoints);
+  //console.log("ŁO MATA OTO BŁAD: "+handlePoints);
   return (
     <HomeTemplate>
       {isStudentLoading && !isStudentError && <Loading />}
@@ -36,12 +37,12 @@ const SettingsView = () => {
       }
     
       <MainBox>
-        <ButtonBar onClick={handlePrizes} text="Nagrody" />
+        <ButtonBar onClick={ () => (setShowPrizes(!showPrizes))} text="Nagrody" />
         {isAwardsLoading && !isAwardsError && <Loading />}
         {showPrizes && <AwardsList awards={awards} studentId={id} />}
-        <ButtonBar onClick={handlePoints} text="Zachowania" />
-        {isTasksLoading && !isTasksError ? <Loading />: "Nie działa"}
-        {showPoints && <PointsList tasksList={tasks} studentId={id} />}
+        <ButtonBar onClick={() => setShowPoints(!showPoints)} text="Zachowania" />
+        {isTasksLoading && !isTasksError && <Loading />}
+        {(showPoints == true) ? <PointsList tasksList={tasks} studentId={id} />: "Error404"}
         <ButtonBar text="Konsekwencje" />
         <ButtonBar text="Informacje o dziecku" />
         <ButtonBar text="Mój profil" />

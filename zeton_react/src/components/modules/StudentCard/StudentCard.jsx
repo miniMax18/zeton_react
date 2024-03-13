@@ -29,7 +29,7 @@ const StyledName = styled(Paragraph)`
 const StudentCard = ({ name, studentId, image }) => {
   return (
     <StyledStudentCard to={studentId}>
-      <ProfileImage src={image ? image : DEFAULT_IMAGE} />
+      <ProfileImage style={{background: image? image: DEFAULT_IMAGE}} />
       <StyledName big>{name}</StyledName>
     </StyledStudentCard>
   );

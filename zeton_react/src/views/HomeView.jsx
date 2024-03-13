@@ -9,6 +9,8 @@ import HomeTemplate from "../components/templates/HomeTemplate";
 // funkcje-hooki swr
 import { useUser } from "../api/useUser";
 import { useStudents } from "../api/useStudents";
+import {Home24Px, Person24Px, SentimentVeryDissatisfied24Px, Settings24Px, Trophy} from "../images/icons/dist/index.jsx";
+import FromSVGToDataUri from "../components/utils/FromSVGToDataUri.js";
 
 const StyledHeadingWrapper = styled.header`
   width: 100%;
@@ -61,6 +63,7 @@ const HomeView = () => {
                       key={student.first_name}
                       name={student.first_name}
                       studentId={student.pk}
+                      image={FromSVGToDataUri(<Trophy/>)}
                     />
                   ))}
                 </React.Fragment>
