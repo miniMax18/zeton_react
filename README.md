@@ -14,7 +14,7 @@ Allows you to earn points for your activities and exchange them for prizes.
 
 ## Development setup
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Vite](https://...todo).
 
 ## Setup node environment
 
@@ -28,7 +28,13 @@ To list every command, run: `npm run`
 
 In the project directory, you can run:
 
+
+### `npm run dev`
+or
 ### `npm start`
+or
+### `npm run start`
+
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -43,15 +49,43 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
+after that if we want to up in browser from dist:
+
+### `npm run preview`
+
+or if we want to get for that serve package:
+
+### `npm run serve`
+
+Builds the app for production to the `dist` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment)-->[this is legacy for change!!! to Vite] for more information.
 
 ---
+## Up Zeton_react app by Docker or Podman separated from zeton_full_stack option:
+
+In cli like bash terminal, prompt one line of them below:
+### `docker build -t react_vite_ts_image_start -f ./Dockerfile_18_vite_alpine_4`
+### `podman build -t react_vite_ts_image_start -f ./Dockerfile_18_vite_alpine_4`
+
+or one line of them below:
+### `docker build -t react_vite_ts_image_start -f ./Dockerfile`
+### `podman build -t react_vite_ts_image_start -f ./Dockerfile`
+
+Next step in cli terminal one line of them below:
+### `docker run -d -p 3000:3000 --name app_react_vite_ts_container_start react_vite_ts_image_start`
+### `podman run -d -p 3000:3000 --name app_react_vite_ts_container_start react_vite_ts_image_start`
+
+Next step in browser We can launch view of our frontend app without backend by endpoint below:
+### `http://localhost:3000`
+
+Another usefull prompt in cli to check our images or containers situation:
+### `docker images`
+### `docker ps`
 
 ## Project UI
 
@@ -81,45 +115,33 @@ And..
 
 ---
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
 ## Learn More
+(We changed create-react-app to vite react by recomendations and because of vulnerabilities from "react-script" package)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
 
 ### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+This section has moved here: ...todo
 
 ### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+This section has moved here: ...todo
 
 ### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+This section has moved here: ...todo
 
 ### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+This section has moved here: ...todo
 
 ### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+This section has moved here: ...todo
 
 ### `npm run build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This section has moved here: ...todo
 
 ### How it works
 
