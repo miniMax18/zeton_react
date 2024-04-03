@@ -83,7 +83,7 @@ Next step in cli terminal one line of them below:
 Next step in browser We can launch view of our frontend app without backend by endpoint below:
 ### `http://localhost:3000`
 
-Another usefull prompt in cli to check our images or containers situation:
+Another useful prompt in cli to check our images or containers situation:
 ### `docker images`
 ### `docker ps`
 
