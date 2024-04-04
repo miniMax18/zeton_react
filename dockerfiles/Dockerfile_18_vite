@@ -1,7 +1,0 @@
-FROM node:18
-
-WORKDIR /usr/src/app
-
-COPY ./dist package-lock.json package.json /usr/src/app/
-
-CMD ["npm", "run" "preview"]
