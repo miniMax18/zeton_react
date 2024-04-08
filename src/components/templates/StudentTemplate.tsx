@@ -15,9 +15,15 @@ const StyledButtonsGroup = styled.div`
   height: 60vh;
 `;
 
+type StudentDataTypes = {
+  name: string|null,
+  points: number|null,
+  image: string|null
+}
+
 const StudentTemplate = ({ name, points, image, studentId }: any) => {
   const [actualPanel, setActualPanel] = useState('none');
-  const [studentData, setStudentData] = useState<any>({
+  const [studentData, setStudentData] = useState<StudentDataTypes|{}>({
     name: null,
     points: null,
     image: null
@@ -26,7 +32,7 @@ const StudentTemplate = ({ name, points, image, studentId }: any) => {
   const handlePanel = (event: any) => {
     setActualPanel(event);
   };
-
+//TODO review
   useEffect(() => {
     const obj = {};
     const newObj = {

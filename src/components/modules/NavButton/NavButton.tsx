@@ -1,12 +1,20 @@
-//import {PropTypes}  from "react/prop-types"
-//import DEFAULT_IMAGE from "../../../images/icons/dist_/ProfileUser";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import Paragraph from "../../atoms/Paragraph/Paragraph";
 import ProfileDefaultImage_SVG from "/profile-user.svg";
 import React from "react";
+import { ThemeTypes } from "../../../theme/appTheme";
 
-const StyledNavLink = styled(NavLink)`
+interface StyledNavLinkInterface {
+  theme: ThemeTypes
+}
+interface StyledParagraphInterface {
+  theme: ThemeTypes
+}
+interface StyledIconInterface {
+  theme: ThemeTypes
+}
+const StyledNavLink = styled(NavLink)<StyledNavLinkInterface>`
   width: 60px;
   display: flex;
   align-items: center;
@@ -24,7 +32,7 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
-const StyledParagraph = styled(Paragraph)`
+const StyledParagraph = styled(Paragraph)<StyledParagraphInterface>`
   text-align: center;
   margin: 0;
   color: white;
@@ -36,7 +44,7 @@ const StyledParagraph = styled(Paragraph)`
   width: 60px;
 `;
 
-const StyledIcon = styled.img`
+const StyledIcon = styled.img<StyledIconInterface>`
   height: 30px;
   width: 30px;
   outline:none;
@@ -46,17 +54,21 @@ const StyledIcon = styled.img`
   }
 `;
 type PropsTypesNavButtom = {
-  link: any,
-  image: any, 
-  text: any
+  link: string,
+  image: string, 
+  text: string
 }
-//<NavButton link={`/${id}/settings`} image={FromJSXElementToDataUri(<Settings24Px/>)} text="Ustawienia" />
+
+//Other option use svg images:
 //<StyledIcon style={{backgroundImage: image? `url(${image})`:`url(${ProfileDefaultImage_SVG})`,
 //                    backgroundRepeat: "no-repeat",
 //                    backgroundPosition: "center",
 //                    backgroundAttachment: "none",
 //                    //borderInline: "ridge",
 //                    width: "40px", height: "40px", borderRadius:"5px"}}/>
+//then use that component by(<Settings24Px/> is import from)):
+//<NavButton link={`/${id}/settings`} image={ParserElementToDataUrlBackground(<Settings24Px/>)} text="Ustawienia" />
+
 
 const NavButton = ({ link, image, text }: PropsTypesNavButtom) => (
   <StyledNavLink to={link}>
@@ -64,11 +76,5 @@ const NavButton = ({ link, image, text }: PropsTypesNavButtom) => (
     <StyledParagraph>{text}</StyledParagraph>
   </StyledNavLink>
 );
-//NavButton.propTypes = {
-//  link: PropTypes.any.isRequired,
-//  image: PropTypes.any.isRequired,
-//  text: PropTypes.any.isRequired,
-//};
-
 
 export default NavButton;

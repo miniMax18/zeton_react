@@ -39,7 +39,7 @@ const AwardsView = () => {
         {!isAwardsLoading && !isAwardsError &&
           <CustomSelect
             title="Wybierz nagrodę"
-            data={awards?.filter((award: any) => award.student === id)}
+            data={awards?.filter((award) => award.student.toString() === id)}
             btnTitle="Przyznaj nagrodę"
           />
           }

@@ -1,6 +1,11 @@
 import styled from 'styled-components'
+import type { ThemeTypes } from '../../../theme/appTheme';
 
-const CustomArrow = styled.span`
+interface  CustomArrowInterface {
+    theme: ThemeTypes
+};
+
+const CustomArrow = styled.span<CustomArrowInterface>`
     position: absolute;
     top: 0;
     right: 0;
@@ -26,7 +31,7 @@ const CustomArrow = styled.span`
     border-right: var(--size) solid transparent;
     border-top: var(--size) solid black;
 }
-@media only screen and(max-width: ${({ theme }) => theme.mediaMaxSize.xs}) {
+@media only screen and(max-width: ${({ theme }: CustomArrowInterface) => theme.mediaMaxSize.xs}) {
         &::before, 
         &::after {
         --size: 0.5rem;

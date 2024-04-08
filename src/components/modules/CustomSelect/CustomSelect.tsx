@@ -7,37 +7,46 @@ import MainBox from '../../atoms/Sections/MainBox';
 import { Subheading } from '../../atoms/Heading/Heading';
 //import  {dataa, dataa as datamock} from '../../../mockyClient';
 import React from 'react';
+import { ThemeTypes } from '../../../theme/appTheme';
 
-const DropdownContainer: any = styled.div`
+interface ListItemInterface {
+  theme: ThemeTypes
+};
+
+interface DropdownListInterface {
+  theme: ThemeTypes
+};
+
+const DropdownContainer = styled.div`
   margin: 0 auto;
   /* position: absolute; */
   width: 100%;
 `;
 
-const DropdownHeader: any = styled.div`
+const DropdownHeader = styled.div`
   position: relative;
   width: 100%;
 `;
 
-const DropdownListContainer: any = styled.div`
+const DropdownListContainer = styled.div`
   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
   position: absolute;
   width: 100%;
 `;
 
-const DropdownList: any = styled.ul`
+const DropdownList = styled.ul<DropdownListInterface>`
   padding: 0;
   margin: 0;
   background: white;
   color: black;
   font-size: 1.25rem;
-  border-radius: ${({ theme }) => theme.radius};
+  border-radius: ${({ theme }: DropdownListInterface) => theme.radius};
   position: relative;
   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
   padding-bottom: 1rem;
 `;
 
-const ListItem = styled.li`
+const ListItem = styled.li<ListItemInterface>`
   position: relative;
   list-style: none;
   padding: 1rem 1.5rem 1rem 1.5rem;
@@ -54,23 +63,24 @@ const ListItem = styled.li`
   &:hover,
   &:focus {
     cursor: pointer;
-    border: 1px solid ${({ theme }) => theme.primary};
+    border: 1px solid ${({ theme }: ListItemInterface) => theme.primary};
   }
 `;
-type DataMockTypes = {
+
+ type DataObjectTypes = {
   id: number,
   name: string,
   value: number,
   student: number
 };
-type PropTypesCustomSelect = {
+
+type CustomSelectPropTypes = {
   title: any, 
-  data: DataMockTypes[], 
+  data?: DataObjectTypes[], 
   btnTitle: any
 };
 
-
-const CustomSelect = ({ title, data, btnTitle }: PropTypesCustomSelect): JSX.Element => {
+const CustomSelect = ({ title, data, btnTitle }: CustomSelectPropTypes): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [selectedOption, setSelectedOption] = useState<SetStateAction<string[]>>([]);
   const [selectedHeader, setSelectedHeader] = useState<any[string]>([title]);

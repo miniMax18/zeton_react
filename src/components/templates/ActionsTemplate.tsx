@@ -1,8 +1,15 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import styled from "styled-components";
+import { ThemeTypes } from "../../theme/appTheme";
 
-const StyledActionsTemplate: any = styled.section`
+type ActionType = string;
+
+interface StyledActionsTemplateInterface {
+  theme: ThemeTypes,
+  action: ActionType
+};
+
+const StyledActionsTemplate = styled.section<StyledActionsTemplateInterface>`
   position: absolute;
   left: 80px;
   top: 0;
@@ -14,7 +21,7 @@ const StyledActionsTemplate: any = styled.section`
   flex-direction: column;
   justify-content: flex-start;
   transition: transform 0.8s ease-in-out;
-  transform: ${({ action }: any) =>
+  transform: ${({ action }) =>
     action === "true" ? "translateX(0)" : "translateX(105vw)"};
   padding: 40px;
   z-index: 19;
@@ -25,8 +32,12 @@ const StyledActionsTemplate: any = styled.section`
     transition: transform 0.5s ease-in-out;
   }
 `;
+interface ActionsTemplateInterface {
+    children: JSX.Element[],
+    action: ActionType
+};
 
-const ActionsTemplate = ({ children, action }: any) => (
+const ActionsTemplate = ({ children, action }: ActionsTemplateInterface) => (
   <StyledActionsTemplate action={action}>{children}</StyledActionsTemplate>
 );
 

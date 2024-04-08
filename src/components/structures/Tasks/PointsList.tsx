@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 import { useState, useEffect } from 'react';
 import { Heading, Subheading } from '../../atoms/Heading/Heading';
 import { StyledArticle } from '../../atoms/Sections/Article';

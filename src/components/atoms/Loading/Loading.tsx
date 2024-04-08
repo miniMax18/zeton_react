@@ -1,15 +1,17 @@
 import React from "react";
 import styled from "styled-components";
+import { ThemeTypes } from "../../../theme/appTheme";
 
 interface StyledLoadingElemInterface {
+  theme: ThemeTypes,
   pulsar?: string
-}
+};
 
 const StyledLoading = styled.div`
   margin: 50px auto;
 `;
 
-const StyledLoadingElem: any = styled.div<StyledLoadingElemInterface>`
+const StyledLoadingElem = styled.div<StyledLoadingElemInterface>`
   display: inline-block;
   background-color: ${({ theme }) => theme.primary};
   height: 15px;

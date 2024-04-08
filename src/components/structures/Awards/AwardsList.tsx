@@ -12,7 +12,7 @@ import { StyledUl, StyledDate } from '../../atoms/Lists/Lists';
 
 const AwardsList = ({awards, studentId}: any) => {
   const [prizes, setPrizes] = useState(awards);
-  const [editing, setEditing] = useState(false); 
+  const [editing, setEditing] = useState<boolean>(false); 
 
   const [currentStudent, setCurrentStudent] = useState(studentId)
   

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useState, useEffect } from 'react';
 import { AddButton, DeleteButtonText } from '../../atoms/Buttons/LightButtons';
 import {
@@ -9,7 +8,13 @@ import {
 } from '../../atoms/Form/Form';
 import React from 'react';
 
-const EditPointsForm = (props: any) => {
+type PropsType = {
+  setEditing: (e: boolean) => void;
+  currentTask: any,
+  updateTask:(arg1: any, arg2: any) => void;
+};
+
+const EditPointsForm = (props: PropsType) => {
   const [task, setTask] = useState(props.currentTask);
 
   const handleInputChange = (event: any) => {

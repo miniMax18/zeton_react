@@ -1,4 +1,27 @@
-export const theme = {
+//import type CSS from 'styled-components';
+
+export type ThemeTypes = {
+  background?: string,
+  grey: string,
+  primary: string,
+  radius: string,
+  spacing: string,
+  regular: string,
+  bold: string,
+  fontSize:  {
+    xxs: string,
+    xs: string,
+    sm: string,
+    md: string,
+    lg: string,
+    xl: string,
+  },
+  mediaMaxSize: {
+    xs: string,
+  },
+}
+
+export const theme: ThemeTypes = {
   background: "#ffffff",
   grey: "#d8d8d8",
   primary: "#4169e1",

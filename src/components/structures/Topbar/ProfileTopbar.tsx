@@ -1,5 +1,3 @@
-//import DEFAULT_IMAGE from "../../../images/icons/dist_/ProfileUser";
-//import STAR_ICON from "../../../images/icons/dist_/Star";
 import styled from "styled-components";
 import DEFAULT_IMAGE_SVG from "/profile-user.svg";
 import ProfileImage from "../../atoms/ProfileImage/ProfileImage";

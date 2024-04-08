@@ -8,11 +8,23 @@ import {
 } from '../../atoms/Form/Form';
 import React from 'react';
 
-const EditPrizeForm: any = (props: any) => {
-  const [prize, setPrize] = useState(props.currentPrize);
+type PrizeTypes = {
+  value: string | number | readonly string[] | undefined;
+  id: number | null;
+  name: string;
+};
 
-  const handleInputChange: any = (event: any) => {
-    const { name, value } = event.target;
+type EditPrizeFormPropsTypes = {
+  currentPrize: PrizeTypes;
+  setEditing: (init:boolean) => void,
+  updatePrize: (id:number | null, prizeState: PrizeTypes) => void
+};
+
+const EditPrizeForm = (props: EditPrizeFormPropsTypes): JSX.Element => {
+  const [prize, setPrize] = useState<PrizeTypes>(props.currentPrize);
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target as HTMLInputElement;
     setPrize({ ...prize, [name]: value });
   };
 

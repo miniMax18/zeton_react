@@ -1,8 +1,12 @@
 import React from 'react';
 import styled from 'styled-components'
+import type { ThemeTypes } from '../../../theme/appTheme';
 
+interface StyledSelectHeaderInterface {
+    theme: ThemeTypes
+}
 
-const StyledSelectHeader = styled.div`
+const StyledSelectHeader = styled.div<StyledSelectHeaderInterface>`
     width: 100%;
     margin:0 auto;
     background: white;
@@ -29,7 +33,11 @@ const StyledSelectHeader = styled.div`
     }
 `;
 
-const SelectHeader = (props: any) => {
+type PropsTypes = {
+ text: string
+}
+
+const SelectHeader = (props: PropsTypes) => {
     return (
         <StyledSelectHeader>{props.text}</StyledSelectHeader>
     )

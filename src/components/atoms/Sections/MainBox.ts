@@ -1,6 +1,11 @@
 import styled from 'styled-components';
+import { ThemeTypes } from '../../../theme/appTheme';
 
-const MainBox = styled.div`
+interface MainBoxInterface {
+ theme: ThemeTypes
+}
+
+const MainBox = styled.div<MainBoxInterface>`
   width: 100%;
   display: flex;
   flex-direction: column;

@@ -4,7 +4,11 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyle from '../../theme/GlobalStyle';
 import { theme } from '../../theme/appTheme';
 
-const MainTemplate = ({ children }: any) => {
+type ChildrenPropsTypes = {
+  children: JSX.Element
+}
+
+const MainTemplate = ({ children }: ChildrenPropsTypes) => {
   return (
     <React.Fragment>
       <GlobalStyle />

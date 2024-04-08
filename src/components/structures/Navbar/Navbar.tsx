@@ -11,6 +11,7 @@ import Person24PxSVG from "/person-24px.svg";
 import Settings24PxSVG from "/settings-24px.svg";
 import React from "react";
 import { JSX } from 'react/jsx-runtime';
+import { ThemeTypes } from "../../../theme/appTheme";
 
 
 //import {css} from "styled-components";
@@ -29,7 +30,11 @@ import { JSX } from 'react/jsx-runtime';
 ///  `;
 ///};
 
-const StyledNavbar = styled.div`
+interface StyledNavbarInterface {
+  theme: ThemeTypes
+}
+
+const StyledNavbar = styled.div<StyledNavbarInterface>`
   position: fixed;
   top: 0;
   left: 0;
@@ -50,9 +55,14 @@ const StyledNavbar = styled.div`
   }
 `;
 
+const Home24PxSVG_ = styled.svg`
+background-image: url(./home-24px.svg)
+
+`;
+
 const Navbar = (): JSX.Element => {
   let { id } = useParams();
-  console.log(`${id}`);
+  //console.log(`${id}`);
 
 
   //Example of usage another option to implement image below:

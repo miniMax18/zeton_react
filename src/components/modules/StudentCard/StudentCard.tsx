@@ -1,13 +1,16 @@
-//import {PropTypes}  from "react/prop-types";
-//import DEFAULT_IMAGE from "../../../images/icons/dist_/ProfileUser";
 import { Link } from "react-router-dom";
 import Paragraph from "../../atoms/Paragraph/Paragraph";
 import ProfileImage from "../../atoms/ProfileImage/ProfileImage";
 import ProfileDefaultImage_SVG from "/profile-user.svg";
 import styled from "styled-components";
 import React from "react";
+import { ThemeTypes } from "../../../theme/appTheme";
 
-const StyledStudentCard: any = styled(Link)`
+interface StyledStudentCardInterface {
+  theme: ThemeTypes
+}
+
+const StyledStudentCard = styled(Link)<StyledStudentCardInterface>`
   position: relative;
   width: 100%;
   display: flex;
@@ -37,14 +40,9 @@ const StudentCard = ({ name, studentId, image }: PropTypesStudentCard) => {
   return (
     <StyledStudentCard to={studentId}>
       <ProfileImage src={(image) ? image.toString() : ProfileDefaultImage_SVG} />
-      <StyledName big>{name}</StyledName>
+      <StyledName big={true}>{name}</StyledName>
     </StyledStudentCard>
   );
 };
-//StudentCard.propTypes = {
-//  name: PropTypes.any.isRequired,
-//  studentId: PropTypes.any.isRequired,
-//  image: PropTypes.any.isRequired,
-//};
 
 export default StudentCard;

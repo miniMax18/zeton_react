@@ -12,8 +12,6 @@ import { useStudents } from "../api/useStudents";
 //import StarSVG from "../images/icons/star.svg";
 import ProfileDefaultImage_SVG from "/profile-user.svg";
 
-//import {Trophy} from 
-//import FromSVGToDataUri from "../components/utils/FromSVGToDataUri";
 
 const StyledHeadingWrapper = styled.header`
   width: 100%;
@@ -27,7 +25,7 @@ const StyledHeadingWrapper = styled.header`
   }
 `;
 
-const StyledHeading = styled(Heading)``;
+const StyledHeading: any = styled(Heading)``;
 
 const StyledUsersWrapper = styled(StyledHeadingWrapper)``;
 
@@ -42,14 +40,8 @@ const StyledVisibleForTest = styled.p`
   line-height: 0;
 `;
 
-type User = { 
-    user: any;
-    isLoading: boolean;
-    isError: any;
-};
-
-const HomeView = () => {
-  const { user, isLoading, isError }: any = useUser();
+const HomeView = (): JSX.Element => {
+  const { user, isUserLoading, isUserError } = useUser();
   const { students, isStudentsLoading, isStudentsError } = useStudents();
 
   return (
@@ -67,7 +59,7 @@ const HomeView = () => {
             {!isStudentsLoading && !isStudentsError && 
               students && (
                 <React.Fragment>
-                  {students.map((student: { first_name: any; pk: any; }) => (
+                  {students.map((student) => (
                     <StudentCard
                       key={student.first_name}
                       name={student.first_name}
@@ -85,7 +77,7 @@ const HomeView = () => {
       } */}
         </HomeTemplate>
       )}
-      {isLoading && <Loading />}
+      {isUserLoading && <Loading />}
       {
         // isError && <Error />
       }

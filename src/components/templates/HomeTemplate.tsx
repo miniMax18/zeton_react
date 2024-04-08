@@ -1,7 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ThemeTypes } from '../../theme/appTheme';
 
-export const StyledContainer = styled.div`
+interface StyledContainerInterface {
+  theme: ThemeTypes
+}
+export const StyledContainer = styled.div<StyledContainerInterface>`
   position: relative;
   min-height: 100vh;
   width: 100%;

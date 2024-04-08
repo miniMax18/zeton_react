@@ -1,18 +1,23 @@
 import styled from 'styled-components';
 import { DeleteButton, EditButton } from '../Buttons/LightButtons';
+import type { ReactNode } from 'react';
+import type { ThemeTypes } from '../../../theme/appTheme';
 import React from 'react';
+interface ListsStyledInterface {
+ theme?: ThemeTypes
+}
 
-export const StyledUl = styled.ul`
+export const StyledUl = styled.ul<ListsStyledInterface>`
   padding-left: 0;
 `;
 
-export const StyledDate = styled.span`
+export const StyledDate = styled.span<ListsStyledInterface>`
   font-size: ${({ theme }) => theme.fontSize.xxs};
   color: rgba(0 0 0 0.8);
   margin-bottom: 0;
 `;
 
-export const StyledLiElement = styled.li`
+export const StyledLiElement = styled.li<ListsStyledInterface>`
   position: relative;
   list-style: none;
   padding: 1rem 1.5rem 1rem 1.5rem;
@@ -27,14 +32,14 @@ export const StyledLiElement = styled.li`
     font-size: ${({ theme }) => theme.fontSize.xxs};
   }
 `;
-const TextRow = styled.div`
+const TextRow = styled.div<ListsStyledInterface>`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 70%;
 `;
 
-export const LiDateElem = styled(StyledLiElement)`
+export const LiDateElem = styled(StyledLiElement)<ListsStyledInterface>`
   flex-direction: column;
   line-height: 0.5;
   padding: 0.7rem 1.5rem;
@@ -42,13 +47,22 @@ export const LiDateElem = styled(StyledLiElement)`
   text-align: left;
   align-items: stretch;
 `;
-const ButtonRow = styled(TextRow)`
+const ButtonRow = styled(TextRow)<ListsStyledInterface>`
   width: 30%;
   justify-content: space-around;
   margin-left: 0.5rem;
 `;
 
-const LiElement = (props: any) => {
+type PropsTypeLiElement = {
+  //[x: string]: any;
+  id: number,
+  delete: any;
+  edit: any;
+  points: ReactNode;
+  text: ReactNode;
+}
+
+const LiElement = (props: PropsTypeLiElement) => {
   console.log(props)
   return (
     <StyledLiElement>

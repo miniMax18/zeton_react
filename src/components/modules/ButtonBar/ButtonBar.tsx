@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import styled from 'styled-components';
 import Button from '../../atoms/Buttons/Button';
 import CustomArrow from '../../atoms/Buttons/CustomArrow';
@@ -24,8 +23,8 @@ const StyledButtonBar = styled(Button)`
   cursor: pointer;
 `;
 type PropTypesButtonBar = {
-  text: any, 
-  onClick: any
+  text: string, 
+  onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
 const ButtonBar = ({ text, onClick }: PropTypesButtonBar): JSX.Element => {

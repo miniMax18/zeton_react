@@ -1,15 +1,16 @@
 import styled, { IStyledComponent } from 'styled-components';
+import type { ThemeTypes } from '../../../theme/appTheme';
 
-type BackgroundTypes = {
-  theme: string,
-  outline: string,
-  disabled: boolean
+interface ButtonInterface {
+  theme?: ThemeTypes,
+  outline?: string,
+  disabled?: boolean
 };
 //type Item = [string, boolean, boolean];
 //type Dictionary = { [key: string]: Item; }
 //Record<string, Item>
 
-const Button: any = styled.button<BackgroundTypes>`
+const Button = styled.button<ButtonInterface>`
   background-color: ${({ theme, outline, disabled }) => {
     if (outline === "true") {
       return 'transparent';

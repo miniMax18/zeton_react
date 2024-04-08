@@ -1,6 +1,10 @@
 import styled, { IStyledComponent } from 'styled-components';
 
-export const StyledContainer: IStyledComponent<"web", any> = styled.main<any>`
+interface StyledContainer {
+
+}
+
+export const StyledContainer: IStyledComponent<"web", StyledContainer> = styled.main<StyledContainer>`
   position: relative;
   width: 100%;
   display: flex;

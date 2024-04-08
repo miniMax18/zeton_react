@@ -17,7 +17,7 @@ const StudentView = () => {
         <StudentTemplate
         name={student?.first_name}
         points={student?.total_points}
-        studentId={pathId} image={undefined}        />
+        studentId={pathId} image={undefined} />
       }
       <Navbar />
     </HomeTemplate>

@@ -36,7 +36,7 @@ const TasksBar = ({ handlePanel, panel, studentData }: any) => {
         {!isTasksLoading && !isTasksError && (
           <CustomSelect
             title="Wybierz zachowanie"
-            data={tasks.filter((task: any) => task.student === id)}
+            data={tasks?.filter((task: any) => task.student === id)}
             btnTitle="Przyznaj punkty"
           />
         )}

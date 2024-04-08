@@ -8,7 +8,6 @@ import StudentHeader from '../components/structures/StudentHeader/StudentHeader'
 import ButtonBar from '../components/modules/ButtonBar/ButtonBar';
 import MainBox from '../components/atoms/Sections/MainBox';
 import Loading from '../components/atoms/Loading/Loading';
-
 import { useStudentById } from '../api/useStudentById';
 import { useAwards } from '../api/useAwards';
 import { useTasks } from '../api/useTasks';
@@ -22,11 +21,10 @@ const SettingsView = () => {
   const { awards, isAwardsLoading, isAwardsError} = useAwards(id)
   const { tasks, isTasksLoading, isTasksError} = useTasks(id)
   
-  const [showPrizes, setShowPrizes] = useState(false);
+  const [showPrizes, setShowPrizes] = useState<boolean>(false);
   //const handlePrizes = () => setShowPrizes(!showPrizes);
-  const [showPoints, setShowPoints] = useState(false);
+  const [showPoints, setShowPoints] = useState<boolean>(false);
   //const handlePoints = () => setShowPoints(!showPoints);
-  //console.log("ŁO MATA OTO BŁAD: "+handlePoints);
   return (
     <HomeTemplate>
       {isStudentLoading && !isStudentError && <Loading />}

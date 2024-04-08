@@ -1,4 +1,3 @@
-//import {PropTypes}  from "react/prop-types";
 import { connect } from "react-redux";
 import HomeTemplate from "../components/templates/HomeTemplate";
 import Navbar from "../components/structures/Navbar/Navbar";
@@ -13,10 +12,6 @@ const InfoView = ({ student }: any): JSX.Element => {
     <Navbar />
   </HomeTemplate>
 )};
-
-//InfoView.propTypes = {
-//  student: PropTypes.any.isRequired
-//};
 
 const mapStateToProps: any = (state: any) => {
   return {

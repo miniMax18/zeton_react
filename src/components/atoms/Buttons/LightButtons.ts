@@ -2,8 +2,13 @@ import styled from 'styled-components';
 import PLUS_SVG from "/plus.svg";
 import DELETE_SVG from "/delete.svg";
 import EDIT_SVG from "/edit.svg";
+import type { ThemeTypes } from '../../../theme/appTheme';
 
-const LightButton = styled.button`
+interface LightButtonInterface {
+  theme: ThemeTypes
+}
+
+const LightButton = styled.button<LightButtonInterface>`
   color: ${({ theme }) => theme.primary};
   font-size: ${({ theme }) => theme.fontSize.xs};
   text-transform: uppercase;
@@ -31,7 +36,7 @@ const LightButton = styled.button`
   }
 `;
 
-export const AddButton: any = styled(LightButton)`
+export const AddButton = styled(LightButton)`
   background-image: url(${PLUS_SVG});
 `;
 

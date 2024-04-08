@@ -8,10 +8,14 @@ import STAR_ICON_SVG from "/star.svg";
 import ReturnButton from "../../atoms/Buttons/ReturnButton";
 import { NavLink } from "react-router-dom";
 import React from "react";
-import { FastOmit } from "styled-components/dist/types";
 import ProfileImageSVG from "/profile-user.svg";
+import { ThemeTypes } from "../../../theme/appTheme";
 
-const StyledStudentHeader: IStyledComponent<"web", FastOmit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>, never>> = styled.header`
+interface StyledStudentHeaderInterface {
+  theme: ThemeTypes
+}
+
+const StyledStudentHeader = styled.header<StyledStudentHeaderInterface>`
   position: relative;
   width: 100%;
   display: flex;
@@ -58,13 +62,15 @@ const StyledIcon = styled.img`
   margin-right: 10%;
   z-index: 2;
 `;
+
 //type Item = [string, number, string];
 type ItemsTypes = {
-  name: string,
-  points: number,
+  name?: string,
+  points?: number,
   image?: string,
   studentId?: string
-}
+};
+
 //{ name, points, image }: Record<string, string | number| undefined>
 const StudentHeader = ({ name, points, image }: ItemsTypes): JSX.Element => {
   return (
@@ -83,12 +89,5 @@ const StudentHeader = ({ name, points, image }: ItemsTypes): JSX.Element => {
     </StyledStudentHeader>
   );
 };
-
-//StudentHeader.propTypes = {
-//  name: PropTypes.any.isRequired,
-//  points: PropTypes.any.isRequired,
-//  image: PropTypes.any.isRequired,
-//};
-
 
 export default StudentHeader;

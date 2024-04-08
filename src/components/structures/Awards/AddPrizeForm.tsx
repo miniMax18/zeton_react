@@ -1,14 +1,23 @@
-/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { AddButton } from '../../atoms/Buttons/LightButtons';
 import { StyledForm, StyledInput, StyledLabel } from '../../atoms/Form/Form';
 
-const AddPrizeForm = (props: any) => {
-  const initialFormState = { id: null, name: '', value: '' };
-  const [prize, setPrize] = useState(initialFormState);
+type InitialPrizesStateTypes = {
+  id: number|null, 
+  name: string, 
+  value: string 
+};
 
-  const handleInputChange = (event: any) => {
-    const { name, value } = event.target;
+type AddPrizeFormPropsTypes = {
+  addPrize: (init:InitialPrizesStateTypes) => void
+};
+
+const AddPrizeForm = (props: AddPrizeFormPropsTypes) => {
+  const initialFormState = { id: null, name: '', value: '' };
+  const [prize, setPrize] = useState<InitialPrizesStateTypes>(initialFormState);
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target as HTMLInputElement;
 
     setPrize({ ...prize, [name]: value });
   };

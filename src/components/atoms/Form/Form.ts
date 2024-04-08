@@ -1,12 +1,16 @@
 import styled, { DefaultTheme } from 'styled-components';
 import type { CSSProp } from "styled-components";
+import { ThemeTypes } from '../../../theme/appTheme';
+
 interface StyledFormInterface {}
+
 interface StyledLabelInterface {}
+
 interface StyledInputInterface {
-  theme: DefaultTheme
+  theme: ThemeTypes
 }
 interface StyledRowInterface {
-  theme: DefaultTheme
+  theme: ThemeTypes
 }
 
 export const StyledForm = styled.form<StyledFormInterface>`
@@ -17,7 +21,7 @@ export const StyledForm = styled.form<StyledFormInterface>`
   margin: 2rem auto;
 `;
 
-export const StyledLabel = styled.label`
+export const StyledLabel = styled.label<StyledLabelInterface>`
   font-size: 1.15rem;
   padding: 1rem 0 0.25rem;
 `;

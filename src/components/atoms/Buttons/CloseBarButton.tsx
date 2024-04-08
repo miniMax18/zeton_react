@@ -2,18 +2,20 @@ import styled from "styled-components";
 import ARROW_ICON_SVG from "/arrow_back-24px.svg";
 import EXIT_ICON_SVG from "/exit.svg";
 import React from "react";
+import type { ThemeTypes } from "../../../theme/appTheme";
 
 interface StyledCloseBarButtonInterface {
-  exit: boolean
+  theme: ThemeTypes,
+  exit?: boolean
 }
 
-const StyledCloseBarButton: any = styled.button<StyledCloseBarButtonInterface>`
+const StyledCloseBarButton = styled.button<StyledCloseBarButtonInterface>`
   display: flex;
   background-color: ${({ theme }) => theme.background};
   border: none;
   height: 50px;
   transition: 0.2s;
-  // background-image: url( ${({ exit }) => exit ? EXIT_ICON_SVG : ARROW_ICON_SVG});
+  //background-image: url( ${({ exit }) => exit ? EXIT_ICON_SVG : ARROW_ICON_SVG});
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -28,7 +30,7 @@ const StyledCloseBarButton: any = styled.button<StyledCloseBarButtonInterface>`
 
 const CloseBarButton = ({closePanel}: any) => {
 
-  return <StyledCloseBarButton onClick={() => closePanel('none')}>
+  return <StyledCloseBarButton exit={undefined} onClick={() => closePanel('none')}>
     <img src={ARROW_ICON_SVG} alt="arrow_icon"/>
     Powrót
   </StyledCloseBarButton>

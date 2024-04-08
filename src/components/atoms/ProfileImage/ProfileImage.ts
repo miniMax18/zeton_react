@@ -1,7 +1,12 @@
 import styled from "styled-components";
+import { ThemeTypes } from "../../../theme/appTheme";
+
+interface ProfileImageInterface {
+  theme: ThemeTypes
+}
 
 //background-image: url(${(image: any) => image.src});
-const ProfileImage: any = styled.img`
+const ProfileImage = styled.img<ProfileImageInterface>`
   
   height: 80px;
   width: 80px;

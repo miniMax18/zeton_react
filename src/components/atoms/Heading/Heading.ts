@@ -1,6 +1,8 @@
 import styled from 'styled-components';
+import { ThemeTypes } from '../../../theme/appTheme';
 
 interface HeadingPropsInterface {
+  theme: ThemeTypes,
   big?: boolean;
 }
 
@@ -35,6 +37,6 @@ export const StyledHeader = styled.header`
   margin-top: 30px;
 `;
 
-export const StyledHeading: any = styled(Heading)`
+export const StyledHeading = styled(Heading)`
   margin: 0 0 0 0;
 `;
