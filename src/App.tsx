@@ -10,6 +10,7 @@ import ConsequencesView from './views/ConsequencesView';
 import SettingsView from './views/SettingsView';
 import Head from './Head';
 import { ROUTE_NAME } from './const/routing.const';
+import AuthProvider from "./providers/AuthProvider.tsx";
 
 function App() {
   // const [loggedIn, addLoggedIn] = useState(true);
@@ -20,7 +21,8 @@ function App() {
       <Head />
 
      
-        <MainTemplate>   
+        <MainTemplate>
+        <AuthProvider>
         <Routes>      
             <Route path={ROUTE_NAME.home} element={<HomeView />}/>
             <Route path={ROUTE_NAME.student}  element={<StudentView />}/>
@@ -30,6 +32,7 @@ function App() {
             <Route path={ROUTE_NAME.info}element={<InfoView />}/>
             <Route path={ROUTE_NAME.settings}element={<SettingsView />}/>
             </Routes>
+            </AuthProvider>
         </MainTemplate>
       
     </div>

@@ -1,31 +1,37 @@
 import { ENDPOINT } from "../const/endpoints.const";
-import useSWR, { SWRResponse } from "swr";
+import useSWR, {SWRResponse, useSWRConfig} from "swr";
+import useSWRMutation from 'swr/mutation'
+import axios, {AxiosInstance} from "axios"
+import {Fetcher, Key} from "swr/dist/types";
 
-type UserObject = {
-  user: string
+type UserRequestBody = {
+  username: string,
+  password: string
+}
+
+export type UserResponse = {
+  token: string
 };
 
-type UseUserObjectDataResponse = {
-  user: UserObject,
-  isUserLoading: boolean,
-  isUserError: boolean,
-};
-
-type GetUserByFetcher = {
-  user: UserObject
-};
+export const axiosInstance = (): AxiosInstance => {
+  return axios.create({
+    baseURL: "http://localhost:8000/api/",
+    headers: {
+      "content-type": "application/json; charset=utf-8",
+      "accept": "application/json"
+    }
+  })
+}
 
 // adding SWR
-const fetcher = (...args: [string]) => fetch(...args as unknown as [string]).then((res) => res.json());
+// const fetcher = (...args: [string]) => fetch(...args as unknown as [string]).then((res) => res.json());
+const fetcher = async (user: UserRequestBody) => await axiosInstance().post("token-auth/", user)
 
-const useUser = (): UseUserObjectDataResponse => {
-  const { data, error }: SWRResponse = useSWR<GetUserByFetcher>(ENDPOINT.currentUser, fetcher);
+// const useUser = (): UserResponse =>  useSWR<UserResponse>(ENDPOINT.currentUser, fetcher)
+const useUser = () =>  useSWRMutation<UserResponse>(ENDPOINT.currentUser, fetcher)
 
-  return {
-    user: data?.user,
-    isUserLoading: !error && (!data || !data.users),
-    isUserError: error,
-  };
-};
+    // <Data = any, Error = any, SWRKey extends Key = null>(key: SWRKey, fetcher: Fetcher<Data, SWRKey> | null): SWRResponse<Data, Error>;
+
+
 
 export { useUser };
