@@ -1,6 +1,6 @@
 import * as React from "react";
-const SvgSettings24Px: any = (props: any) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} {...props}>
+const SvgSettings: any = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24}>
     <path
       d="M0 0h24v24H0Z"
       style={{
@@ -19,4 +19,4 @@ const SvgSettings24Px: any = (props: any) => (
     />
   </svg>
 );
-export default SvgSettings24Px;
+export default SvgSettings;

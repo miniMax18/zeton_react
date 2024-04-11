@@ -4,15 +4,19 @@
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import NavButton from "../../modules/NavButton/NavButton";
-import Home24PxSVG from "/home-24px.svg";
-import TrophySVG from "/trophy.svg";
-import SentimentVeryDissatisfied24PxSVG from "/sentiment_very_dissatisfied-24px.svg";
-import Person24PxSVG from "/person-24px.svg";
-import Settings24PxSVG from "/settings-24px.svg";
+// import Home24PxSVG from "/home-24px.svg";
+// import TrophySVG from "/trophy.svg";
+// import SentimentVeryDissatisfied24PxSVG from "/sentiment_very_dissatisfied-24px.svg";
+// import Person24PxSVG from "/person-24px.svg";
+// import Settings24PxSVG from "/settings-24px.svg";
 import React from "react";
-import { JSX } from 'react/jsx-runtime';
+import { JSX } from "react/jsx-runtime";
 import { ThemeTypes } from "../../../theme/appTheme";
-
+import SvgHome from "../../../images/icons/dist_/Home24Px";
+import SvgTrophy from "../../../images/icons/dist_/Trophy";
+import SvgSentimentVeryDissatisfied from "../../../images/icons/dist_/SentimentVeryDissatisfied24Px";
+import SvgPerson from "../../../images/icons/dist_/Person24Px";
+import SvgSettings from "../../../images/icons/dist_/Settings24Px";
 
 //import {css} from "styled-components";
 ///const StyledExampleCss = ({property1, property2, property3}) => {
@@ -31,14 +35,14 @@ import { ThemeTypes } from "../../../theme/appTheme";
 ///};
 
 interface StyledNavbarInterface {
-  theme: ThemeTypes
+  theme: ThemeTypes;
 }
 
 const StyledNavbar = styled.div<StyledNavbarInterface>`
   position: fixed;
   top: 0;
   left: 0;
-  width: 80px;
+  width: fit-content;
   height: 100%;
   background-color: #4f4e3a;
   display: flex;
@@ -55,15 +59,14 @@ const StyledNavbar = styled.div<StyledNavbarInterface>`
   }
 `;
 
-const Home24PxSVG_ = styled.svg`
-background-image: url(./home-24px.svg)
+// const Home24PxSVG_ = styled.svg`
+// background-image: url(./home-24px.svg)
 
-`;
+// `;
 
 const Navbar = (): JSX.Element => {
   let { id } = useParams();
   //console.log(`${id}`);
-
 
   //Example of usage another option to implement image below:
   //import FromJSXElementToDataUri from "../../utils/FromSVGToDataUri";
@@ -71,11 +74,11 @@ const Navbar = (): JSX.Element => {
   //<NavButton link={`/${id}/settings`} image={FromJSXElementToDataUri(<Settings24Px/>)} text="Ustawienia" />
   return (
     <StyledNavbar>
-      <NavButton link={`/${id}`} image={Home24PxSVG} text="Home" />
-      <NavButton link={`/${id}/awards`} image={TrophySVG} text="Nagrody" /> 
-      <NavButton link={`/${id}/consequences`} image={SentimentVeryDissatisfied24PxSVG} text="Konsekwencje" />
-      <NavButton link={`/${id}/info`} image={Person24PxSVG} text="Info" />
-      <NavButton link={`/${id}/settings`} image={Settings24PxSVG} text="Ustawienia" />
+      <NavButton link={`/${id}`} children={<SvgHome />} text="Home" />
+      <NavButton link={`/${id}/awards`} children={<SvgTrophy />} text="Nagrody" />
+      <NavButton link={`/${id}/consequences`} children={<SvgSentimentVeryDissatisfied />} text="Konsekwencje" />
+      <NavButton link={`/${id}/info`} children={<SvgPerson />} text="Informacje" />
+      <NavButton link={`/${id}/settings`} children={<SvgSettings />} text="Ustawienia" />
     </StyledNavbar>
   );
 };

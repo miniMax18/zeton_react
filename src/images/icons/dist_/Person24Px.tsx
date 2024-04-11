@@ -1,6 +1,6 @@
 import * as React from "react";
-const SvgPerson24Px: any = (props: any) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} {...props}>
+const SvgPerson: any = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24}>
     <path
       fill="none"
       d="M0 0h24v24H0z"
@@ -20,4 +20,4 @@ const SvgPerson24Px: any = (props: any) => (
     />
   </svg>
 );
-export default SvgPerson24Px;
+export default SvgPerson;
