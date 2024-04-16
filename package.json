@@ -14,7 +14,6 @@
     "generate_svg_to_component": "npx @svgr/cli --out-dir src/images/icons/components -- src/images/icons"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^2.2.1",
     "axios": "^1.6.7",
     "nan": "^2.18.0",
     "react": "^18.2.0",
@@ -26,7 +25,8 @@
     "react-svg": "^16.1.33",
     "redux": "^5.0.1",
     "styled-components": "^6.1.8",
-    "swr": "^2.2.5"
+    "swr": "^2.2.5",
+    "@reduxjs/toolkit": "^2.2.1"
   },
   "devDependencies": {
     "@svgr/cli": "^8.1.0",

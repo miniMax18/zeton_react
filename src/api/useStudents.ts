@@ -7,7 +7,7 @@ type StudentObject = {
   total_points?: number,
 };
 
-type UseStudentByIdObjectDataResponse = {
+type UseStudentObjectDataResponse = {
   students?: StudentObject[],
   isStudentsLoading: boolean,
   isStudentsError: boolean,
@@ -20,7 +20,7 @@ type GetStudentsByFetcher = {
 // adding SWR
 const fetcher = (...args: any) => fetch(...args as [any]).then((res) => res.json());
 
-const useStudents = (): UseStudentByIdObjectDataResponse => {
+const useStudents = (): UseStudentObjectDataResponse => {
   const { data, error } = useSWR<GetStudentsByFetcher>(ENDPOINT.studentsList, fetcher);
 
   return {

@@ -37,7 +37,7 @@ interface ActionsTemplateInterface {
     action: ActionType
 };
 
-const ActionsTemplate = ({ children, action }: ActionsTemplateInterface) => (
+const ActionsTemplate = ({ children, action }: ActionsTemplateInterface): JSX.Element => (
   <StyledActionsTemplate action={action}>{children}</StyledActionsTemplate>
 );
 

@@ -8,7 +8,7 @@ type ChildrenPropsTypes = {
   children: JSX.Element
 }
 
-const MainTemplate = ({ children }: ChildrenPropsTypes) => {
+const MainTemplate = ({ children }: ChildrenPropsTypes): JSX.Element => {
   return (
     <React.Fragment>
       <GlobalStyle />
