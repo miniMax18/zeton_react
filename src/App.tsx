@@ -10,8 +10,9 @@ import ConsequencesView from './views/ConsequencesView';
 import SettingsView from './views/SettingsView';
 import Head from './Head';
 import { ROUTE_NAME } from './const/routing.const';
+import { JSX } from 'react/jsx-runtime';
 
-function App() {
+function App():React.ReactNode {
   // const [loggedIn, addLoggedIn] = useState(true);
   // console.log(loggedIn);
 
@@ -23,12 +24,12 @@ function App() {
         <MainTemplate>   
         <Routes>      
             <Route path={ROUTE_NAME.home} element={<HomeView />}/>
-            <Route path={ROUTE_NAME.student}  element={<StudentView />}/>
-            <Route path={ROUTE_NAME.tasks}  element={<TasksView />}/>
+            <Route path={ROUTE_NAME.student} element={<StudentView />}/>
+            <Route path={ROUTE_NAME.tasks} element={<TasksView />}/>
             <Route path={ROUTE_NAME.awards} element={<AwardsView />}/>
             <Route path={ROUTE_NAME.consequences} element={<ConsequencesView/>}/>
-            <Route path={ROUTE_NAME.info}element={<InfoView />}/>
-            <Route path={ROUTE_NAME.settings}element={<SettingsView />}/>
+            <Route path={ROUTE_NAME.info} element={<InfoView />}/>
+            <Route path={ROUTE_NAME.settings} element={<SettingsView />}/>
             </Routes>
         </MainTemplate>
       

@@ -1,6 +1,7 @@
 import { renderToStaticMarkup } from 'react-dom/server';
 import { JSX } from 'react/jsx-runtime';
 
+//interface IComponentToDataUrlBackgroundParser {}
 type UrlStringToBackgroundCssType = string;
 
 const ComponentToDataUrlBackgroundParser = (element: JSX.Element): UrlStringToBackgroundCssType => {
