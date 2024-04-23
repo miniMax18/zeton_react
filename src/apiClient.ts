@@ -1,5 +1,5 @@
-import axios, { AxiosInstance } from "axios";
-import { mockyClient } from './mockyClient'
+import axios, { type AxiosInstance } from "axios";
+import { mockyClient } from "./mockyClient";
 
 const apiClient: AxiosInstance = axios.create({});
 

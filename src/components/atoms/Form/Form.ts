@@ -1,23 +1,22 @@
-import styled, { DefaultTheme } from 'styled-components';
-import type { CSSProp } from "styled-components";
-import { ThemeTypes } from '../../../theme/appTheme';
+import { styled } from "styled-components";
+import { type ThemeTypes } from "../../../theme/appTheme";
 
 interface StyledFormInterface {}
 
 interface StyledLabelInterface {}
 
 interface StyledInputInterface {
-  theme: ThemeTypes
+  theme: ThemeTypes;
 }
 interface StyledRowInterface {
-  theme: ThemeTypes
+  theme: ThemeTypes;
 }
 
 export const StyledForm = styled.form<StyledFormInterface>`
   display: flex;
   flex-direction: column;
   text-align: left;
-  padding: 0.5rem auto;
+  padding: 0.5rem;
   margin: 2rem auto;
 `;
 

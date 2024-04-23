@@ -1,49 +1,49 @@
+import React, { createContext, useContext, useEffect, useReducer } from "react";
 import axios from "axios";
-import React from "react";
+import { type TokenAction, type Authentication } from "./types.ts";
+import {
+  authenticationReducer,
+  type AuthenticationReducer,
+} from "./authenticationReducer.ts";
 
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
+export const AuthenticationContext = createContext<Authentication>({
+  token: null,
+});
+export const TokenDispatchContext = createContext<React.Dispatch<TokenAction>>(
+  {} as React.Dispatch<TokenAction>,
+);
 
-type JWTToken = {
-  token: string | null
-}
+export const useAuthenticationData = () => useContext(AuthenticationContext);
+export const useTokenDispatch = () => useContext(TokenDispatchContext);
 
-const AuthContext = createContext<JWTToken>( {token:null});
+const AuthProvider = ({ children }: { children: React.ReactNode }) => {
+  const localStorageKey = "token";
 
-const AuthProvider = ({children}: {children: React.ReactNode}) => {
-  // State to hold the authentication token
-  const [JWTToken, setJWTToken_] = useState<JWTToken>({token:localStorage.getItem("token")});
-
-  // Function to set the authentication token
-  const setToken = (newToken: string) => {
-    setJWTToken_({token: newToken});
-  };
+  const [authentication, dispatch] = useReducer<AuthenticationReducer>(
+    authenticationReducer,
+    {
+      token: null,
+    },
+  );
 
   useEffect(() => {
-    if (JWTToken.token) {
-      axios.defaults.headers.common["Authorization"] = "JWT " + JWTToken;
-      localStorage.setItem('token',JWTToken.token);
+    if (authentication.token) {
+      axios.defaults.headers.common["Authorization"] =
+        "JWT " + authentication.token;
+      localStorage.setItem(localStorageKey, authentication.token);
     } else {
       delete axios.defaults.headers.common["Authorization"];
-      localStorage.removeItem('token')
+      localStorage.removeItem(localStorageKey);
     }
-  }, [JWTToken]);
+  }, [authentication, localStorageKey]);
 
-  // Memoized value of the authentication context
-  const contextValue = useMemo(
-    () => (
-        JWTToken
-    ),
-    [JWTToken]
-  );
-
-  // Provide the authentication context to the children components
   return (
-    <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
+    <AuthenticationContext.Provider value={authentication}>
+      <TokenDispatchContext.Provider value={dispatch}>
+        {children}
+      </TokenDispatchContext.Provider>
+    </AuthenticationContext.Provider>
   );
-};
-
-export const useAuth = () => {
-  return useContext(AuthContext);
 };
 
 export default AuthProvider;

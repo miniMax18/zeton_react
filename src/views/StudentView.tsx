@@ -11,14 +11,15 @@ const StudentView = () => {
   const { student, isStudentLoading, isStudentError } = useStudentById(pathId);
   return (
     <HomeTemplate>
-      {console.log(student)}
       {isStudentLoading && !isStudentError && <Loading />}
-      {!isStudentLoading && !isStudentError &&
+      {!isStudentLoading && !isStudentError && (
         <StudentTemplate
-        name={student?.first_name}
-        points={student?.total_points}
-        studentId={pathId} image={undefined} />
-      }
+          name={student?.first_name}
+          points={student?.total_points}
+          studentId={pathId}
+          image={undefined}
+        />
+      )}
       <Navbar />
     </HomeTemplate>
   );

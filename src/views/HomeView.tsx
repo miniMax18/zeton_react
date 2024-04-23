@@ -1,17 +1,16 @@
 //import {Home24Px, Person24Px, SentimentVeryDissatisfied24Px, Settings24Px, Trophy} from "../images/icons/dist_/index";
 import React from "react";
+import styled from "styled-components";
 import { Heading } from "../components/atoms/Heading/Heading";
 import { AddButton } from "../components/atoms/Buttons/LightButtons";
 import Loading from "../components/atoms/Loading/Loading";
 import StudentCard from "../components/modules/StudentCard/StudentCard";
-import styled from "styled-components";
 import HomeTemplate from "../components/templates/HomeTemplate";
 // funkcje-hooki swr
-import { useUser } from "../api/useUser";
 import { useStudents } from "../api/useStudents";
 //import StarSVG from "../images/icons/star.svg";
 import ProfileDefaultImage_SVG from "/profile-user.svg";
-
+import { useUser } from "../api/useUser.ts";
 
 const StyledHeadingWrapper = styled.header`
   width: 100%;
@@ -41,7 +40,7 @@ const StyledVisibleForTest = styled.p`
 `;
 
 const HomeView = (): JSX.Element => {
-  const { user, isUserLoading, isUserError } = useUser();
+  const { user, isUserLoading } = useUser();
   const { students, isStudentsLoading, isStudentsError } = useStudents();
 
   return (
@@ -49,27 +48,23 @@ const HomeView = (): JSX.Element => {
       {user && (
         <HomeTemplate>
           <StyledHeadingWrapper>
-            <StyledHeading>
-              Cześć, {user ? user : "Nieznajomy"}
-            </StyledHeading>
+            <StyledHeading>Cześć, {user ? user : "Nieznajomy"}</StyledHeading>
             <StyledHeading>wybierz podopiecznego</StyledHeading>
           </StyledHeadingWrapper>
           <StyledUsersWrapper as="section">
             {isStudentsLoading && !isStudentsError && <Loading />}
-            {!isStudentsLoading && !isStudentsError && 
-              students && (
-                <React.Fragment>
-                  {students.map((student) => (
-                    <StudentCard
-                      key={student.first_name}
-                      name={student.first_name}
-                      studentId={student.pk}
-                      image={ProfileDefaultImage_SVG}
-                    />
-                  ))}
-                </React.Fragment>
-              )
-            }
+            {!isStudentsLoading && !isStudentsError && students && (
+              <React.Fragment>
+                {students.map((student) => (
+                  <StudentCard
+                    key={student.first_name}
+                    name={student.first_name}
+                    studentId={student.pk}
+                    image={ProfileDefaultImage_SVG}
+                  />
+                ))}
+              </React.Fragment>
+            )}
           </StyledUsersWrapper>
           <AddButton>Dodaj podopiecznego</AddButton>
           {/* {

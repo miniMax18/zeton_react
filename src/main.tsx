@@ -1,27 +1,22 @@
 import React from "react";
-import ReactDOM from 'react-dom/client';
-import { Provider } from "react-redux";
-import store from "./api/store";
-import App from "./App.tsx";
-//import * as serviceWorker from "./serviceWorker";
+import ReactDOM from "react-dom/client";
 import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter } from "react-router-dom";
-
-
+import App from "./App.tsx";
+import AuthProvider from "./providers/AuthProvider.tsx";
 
 const documentRoot = document.getElementById("root") as HTMLElement;
 const root: ReactDOM.Root = ReactDOM.createRoot(documentRoot);
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="">
-    <Provider store={store}>
-      <HelmetProvider>
-        <App />
-      </HelmetProvider>
-    </Provider>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter basename="">
+        <HelmetProvider>
+          <App />
+        </HelmetProvider>
+      </BrowserRouter>
+    </AuthProvider>
   </React.StrictMode>,
-  
 );
 
 // If you want your app to work offline and load faster, you can change
