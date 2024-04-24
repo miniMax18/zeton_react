@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route} from 'react-router-dom';
+import { Routes, Route, Router} from 'react-router-dom';
 import MainTemplate from './components/templates/MainTemplate';
 import HomeView from './views/HomeView';
 import StudentView from './views/StudentView';
@@ -11,16 +11,18 @@ import SettingsView from './views/SettingsView';
 import Head from './Head';
 import { ROUTE_NAME } from './const/routing.const';
 import { JSX } from 'react/jsx-runtime';
+import { HelmetProvider } from "react-helmet-async";
+
+
 
 function App():React.ReactNode {
   // const [loggedIn, addLoggedIn] = useState(true);
   // console.log(loggedIn);
 
   return (
+  
     <div className="App">
       <Head />
-
-     
         <MainTemplate>   
         <Routes>      
             <Route path={ROUTE_NAME.home} element={<HomeView />}/>
@@ -34,6 +36,7 @@ function App():React.ReactNode {
         </MainTemplate>
       
     </div>
+
   );
 }
 
