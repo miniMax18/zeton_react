@@ -23,8 +23,9 @@ const Login = () => {
 
   const { trigger, isMutating, error } = useAuthenticateUser();
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault();
+    console.log('login form submit')
     const response = await trigger({
       username: formData.userName,
       password: formData.password,
@@ -61,7 +62,7 @@ const Login = () => {
             required
           />
           {error && <div>Błąd logowania. Spróbuj ponownie.</div>}
-          <Button type="submit" disabled={!isMutating}>
+          <Button type="button" disabled={isMutating} onClick={(event) => handleSubmit(event)}>
             Zaloguj się
           </Button>
         </StyledForm>
