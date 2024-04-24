@@ -12,8 +12,17 @@ import Head from "./Head";
 import { ROUTE_NAME } from "./const/routing.const";
 import Login from "./views/Login.tsx";
 import AuthProvider from "./providers/AuthProvider.tsx";
-function App() {
+//import { JSX } from 'react/jsx-runtime';
+//import { HelmetProvider } from "react-helmet-async";
+
+
+
+function App():React.ReactNode {
+  // const [loggedIn, addLoggedIn] = useState(true);
+  // console.log(loggedIn);
+
   return (
+  
     <div className="App">
       <Head />
       <AuthProvider>
@@ -34,6 +43,7 @@ function App() {
         </MainTemplate>
       </AuthProvider>
     </div>
+
   );
 }
 

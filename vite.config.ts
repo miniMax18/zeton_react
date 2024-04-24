@@ -9,6 +9,16 @@ export default defineConfig(({ mode }) => {
     plugins: [react()],
     define: {
       'process.env': env,
-    }
+    },
+  resolve: {
+    alias: {
+      "@": "/src",
+    },
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['src/__tests__/setup_v1.ts'],
+  }
   }
 })

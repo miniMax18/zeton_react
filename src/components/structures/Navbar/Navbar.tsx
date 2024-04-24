@@ -68,7 +68,7 @@ const Navbar = (): JSX.Element => {
   //Example of usage another option to implement image below:
   //import FromJSXElementToDataUri from "../../utils/FromSVGToDataUri";
   //import {Home24Px, Person24Px, SentimentVeryDissatisfied24Px, Settings24Px, Trophy} from "../../../images/icons/dist_/index";
-  //<NavButton link={`/${id}/settings`} image={FromJSXElementToDataUri(<Settings24Px/>)} text="Ustawienia" />
+  //<NavButton link={`/${id}/settings`} image={ComponentToDataUrlBackgroundParser/(<Settings24Px/>)} text="Ustawienia" />
   return (
     <StyledNavbar>
       <NavButton link={`/${id}`} image={Home24PxSVG} text="Home" />
