@@ -1,13 +1,13 @@
 import { SetStateAction, useState } from 'react';
 import styled from 'styled-components';
-import Button from '../../atoms/Buttons/Button';
-import SelectHeader from '../../atoms/Heading/SelectHeader';
-import CustomArrow from '../../atoms/Buttons/CustomArrow';
-import MainBox from '../../atoms/Sections/MainBox';
-import { Subheading } from '../../atoms/Heading/Heading';
-//import  {dataa, dataa as datamock} from '../../../mockyClient';
+import Button from '@/components/atoms/Buttons/Button';
+import SelectHeader from '@/components/atoms/Heading/SelectHeader';
+import CustomArrow from '@/components/atoms/Buttons/CustomArrow';
+import MainBox from '@/components/atoms/Sections/MainBox';
+import { Subheading } from '@/components/atoms/Heading/Heading';
+//import  {dataa, dataa as datamock} from '@/../mockyClient';
 import React from 'react';
-import { ThemeTypes } from '../../../theme/appTheme';
+import { ThemeTypes } from '@/theme/appTheme';
 
 interface ListItemInterface {
   theme: ThemeTypes
