@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import React from "react";
 import Paragraph from "../../atoms/Paragraph/Paragraph";
 import ProfileDefaultImage_SVG from "/profile-user.svg";
-import React from "react";
 import { ThemeTypes } from "../../../theme/appTheme";
 
 interface StyledNavLinkInterface {

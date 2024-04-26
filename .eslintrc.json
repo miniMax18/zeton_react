@@ -1,16 +1,32 @@
 {
 	"$schema": "https://json.schemastore.org/eslintrc.json",
-	"plugins": ["@typescript-eslint", "import"],
+	"plugins": ["@typescript-eslint", "import", "react-refresh"],
 	"parserOptions": {
-		"project": "tsconfig.json"
+		//"tsconfigRootDir": __dirname <- in cjs this is possible to set but in json -> "project": ["**/tsconfig.json"]
+		"project": ["**/tsconfig.json"]
 	},
+	//"ignores": ["vite.config.ts"],
 	"extends": [
 		"plugin:@typescript-eslint/recommended",
 		"plugin:@typescript-eslint/recommended-requiring-type-checking",
 		"plugin:import/recommended",
 		"plugin:import/typescript",
-		"prettier"
+		"prettier",
+		//"plugin:import/errors",
+		//"plugin:import/warnings",
+		"plugin:import/typescript"
+		//"airbnb-base"
 	],
+	"settings": {
+		"import/resolver": {
+		  "alias": {
+			"map": [
+			  ["@", "./src"]
+			]
+		  }
+		}
+	  },
+	
 	"rules": {
 		// sort imports
 		"import/order": "error",
@@ -57,9 +73,9 @@
 
 		// make sure to `await` inside try…catch
 		//see how to fix https://typescript-eslint.io/rules/return-await/
-		//"no-return-await": "off",
-    	//"@typescript-eslint/return-await": "error"
-		"@typescript-eslint/return-await": ["error", "in-try-catch"],
+		"no-return-await": "off",
+    	"@typescript-eslint/return-await": "error",
+		//"@typescript-eslint/return-await": ["error", "in-try-catch"],
 		
 
 
@@ -83,5 +99,5 @@
 			}
 		}
 	],
-	"ignorePatterns": ["*.js", "*.jsx"]
+	"ignorePatterns": ["*.js", "*.jsx"]	
 }

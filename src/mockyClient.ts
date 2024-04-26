@@ -1,4 +1,4 @@
-export const mockyClient = (url: any) => {
+export const mockyClient = (_url: unknown) => {
   return {
     data: [
       {
