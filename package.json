@@ -16,7 +16,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^2.2.1",
+    "@reduxjs/toolkit": "^2.2.3",
     "axios": "^1.6.7",
     "nan": "^2.18.0",
     "react": "^18.2.0",
