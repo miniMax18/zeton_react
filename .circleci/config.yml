@@ -1,9 +1,9 @@
 version: 2.1
 
 jobs:
-  my-job:
+  our-job:
     docker:
-      - image: cimg/node:18.20.2
+      - image: cimg/node:20.12.2
     steps:
       - checkout
       - run: npm install
@@ -12,4 +12,4 @@ jobs:
 workflows:
   my-workflow:
     jobs:
-      - my-job
+      - our-job

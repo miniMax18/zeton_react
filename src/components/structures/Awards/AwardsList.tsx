@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Heading, Subheading } from '../../atoms/Heading/Heading';
 import MainBox from '../../atoms/Sections/MainBox';
@@ -9,22 +8,21 @@ import AddPrizeForm from './AddPrizeForm';
 import EditPrizeForm from './EditPrizeForm';
 import { StyledUl, StyledDate } from '../../atoms/Lists/Lists';
 
-
-const AwardsList = ({awards, studentId}: any) => {
+const AwardsList = ({ awards, studentId }: any) => {
   const [prizes, setPrizes] = useState(awards);
-  const [editing, setEditing] = useState<boolean>(false); 
+  const [editing, setEditing] = useState<boolean>(false);
 
-  const [currentStudent, setCurrentStudent] = useState(studentId)
-  
- 
+  const [currentStudent, setCurrentStudent] = useState(studentId);
+
   const initialFormState = { id: null, name: '', value: '' };
-  const [currentPrize, setCurrentPrize] = useState(initialFormState);  
+  const [currentPrize, setCurrentPrize] = useState(initialFormState);
 
- useEffect(() => {
-  const filteredPrizes = prizes.filter((prize: any) => prize.student === currentStudent)
-  setPrizes(filteredPrizes)
-}, []) 
- 
+  useEffect(() => {
+    const filteredPrizes = prizes.filter(
+      (prize: any) => prize.student === currentStudent
+    );
+    setPrizes(filteredPrizes);
+  }, []);
 
   const addPrize = (prize: any) => {
     prize.id = prizes.length + 1;
@@ -37,7 +35,9 @@ const AwardsList = ({awards, studentId}: any) => {
 
   const updatePrize = (id: any, updatedPrize: any) => {
     setEditing(false);
-    setPrizes(prizes.map((prize: any) => (prize.id === id ? updatedPrize : prize)));
+    setPrizes(
+      prizes.map((prize: any) => (prize.id === id ? updatedPrize : prize))
+    );
   };
 
   const editPrize = (prize: any) => {
@@ -45,7 +45,6 @@ const AwardsList = ({awards, studentId}: any) => {
     setEditing(true);
     setCurrentPrize({ id: prize.id, name: prize.text, value: prize.points });
   };
-  
 
   return (
     <MainBox>
@@ -54,8 +53,8 @@ const AwardsList = ({awards, studentId}: any) => {
         {awards && (
           <StyledUl>
             {prizes.map((el: any) => {
-              const { name, value, id} = el;
-             
+              const { name, value, id } = el;
+
               return (
                 <LiElement
                   text={name}

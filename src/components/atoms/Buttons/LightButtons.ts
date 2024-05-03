@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import PLUS_SVG from "/plus.svg";
-import DELETE_SVG from "/delete.svg";
-import EDIT_SVG from "/edit.svg";
+import PLUS_SVG from '/plus.svg';
+import DELETE_SVG from '/delete.svg';
+import EDIT_SVG from '/edit.svg';
 import type { ThemeTypes } from '../../../theme/appTheme';
 
 interface LightButtonInterface {
-  theme: ThemeTypes
+  theme: ThemeTypes;
 }
 
 const LightButton = styled.button<LightButtonInterface>`

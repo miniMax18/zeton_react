@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react';
-import { useParams } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 import CloseBarButton from '../../atoms/Buttons/CloseBarButton';
 import {
   Subheading,
   StyledHeader,
   StyledHeading,
 } from '../../atoms/Heading/Heading';
-import Loading from "../../atoms/Loading/Loading";
+import Loading from '../../atoms/Loading/Loading';
 import ActionsTemplate from '../../templates/ActionsTemplate';
 import CustomSelect from '../../modules/CustomSelect/CustomSelect';
 import ProfileTopbar from '../Topbar/ProfileTopbar';
 import { StyledContainer } from '../../atoms/Sections/Containers';
-import { useTasks } from "../../../api/useTasks";
+import { useTasks } from '../../../api/useTasks';
 import React from 'react';
 
 const TasksBar = ({ handlePanel, panel, studentData }: any) => {
@@ -26,7 +26,7 @@ const TasksBar = ({ handlePanel, panel, studentData }: any) => {
 
   return (
     <ActionsTemplate action={activePanel === 'tasks' ? 'true' : 'false'}>
-      <ProfileTopbar studentData={studentData}/>
+      <ProfileTopbar studentData={studentData} />
       <StyledHeader>
         <StyledHeading big>Dodaj punkty</StyledHeading>
       </StyledHeader>
@@ -40,7 +40,7 @@ const TasksBar = ({ handlePanel, panel, studentData }: any) => {
             btnTitle="Przyznaj punkty"
           />
         )}
-      <CloseBarButton closePanel={handlePanel} />
+        <CloseBarButton closePanel={handlePanel} />
       </StyledContainer>
     </ActionsTemplate>
   );

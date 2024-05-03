@@ -16,32 +16,32 @@ const StyledButtonsGroup = styled.div`
 `;
 
 type StudentDataTypes = {
-  name: string|null,
-  points: number|null,
-  image: string|null
-}
+  name: string | null;
+  points: number | null;
+  image: string | null;
+};
 
 const StudentTemplate = ({ name, points, image, studentId }: any) => {
   const [actualPanel, setActualPanel] = useState('none');
-  const [studentData, setStudentData] = useState<StudentDataTypes|{}>({
+  const [studentData, setStudentData] = useState<StudentDataTypes | {}>({
     name: null,
     points: null,
-    image: null
-  })
+    image: null,
+  });
 
   const handlePanel = (event: any) => {
     setActualPanel(event);
   };
-//TODO review
+  //TODO review
   useEffect(() => {
     const obj = {};
     const newObj = {
       name: name || null,
       points: points || null,
-      image: image || null
+      image: image || null,
     };
     Object.assign(obj, newObj);
-    console.log(newObj)
+    console.log(newObj);
     setStudentData(obj);
   }, [name, points, image]);
 
@@ -54,15 +54,21 @@ const StudentTemplate = ({ name, points, image, studentId }: any) => {
           <Button onClick={() => handlePanel('tasks')}>Dodaj punkty</Button>
         </Link> */}
         <Link to={ROUTE_NAME.awards.replace(':id', studentId)}>
-          <Button outline={"true"} onClick={() => handlePanel('awards')}>
+          <Button outline={'true'} onClick={() => handlePanel('awards')}>
             Przyznaj nagrodę
           </Button>
         </Link>
         <Link to={ROUTE_NAME.consequences.replace(':id', studentId)}>
-          <Button outline={"true"} onClick={() => handlePanel('consequences')}>Daj konsekwencję</Button>
+          <Button outline={'true'} onClick={() => handlePanel('consequences')}>
+            Daj konsekwencję
+          </Button>
         </Link>
       </StyledButtonsGroup>
-      <TasksBar panel={actualPanel} handlePanel={handlePanel} studentData={studentData} />
+      <TasksBar
+        panel={actualPanel}
+        handlePanel={handlePanel}
+        studentData={studentData}
+      />
     </>
   );
 };

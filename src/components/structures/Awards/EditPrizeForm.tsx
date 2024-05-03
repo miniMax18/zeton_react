@@ -16,8 +16,8 @@ type PrizeTypes = {
 
 type EditPrizeFormPropsTypes = {
   currentPrize: PrizeTypes;
-  setEditing: (init:boolean) => void,
-  updatePrize: (id:number | null, prizeState: PrizeTypes) => void
+  setEditing: (init: boolean) => void;
+  updatePrize: (id: number | null, prizeState: PrizeTypes) => void;
 };
 
 const EditPrizeForm = (props: EditPrizeFormPropsTypes): JSX.Element => {
@@ -33,14 +33,32 @@ const EditPrizeForm = (props: EditPrizeFormPropsTypes): JSX.Element => {
   }, [props]);
 
   return (
-    <StyledForm onSubmit={(event) => { event.preventDefault(); props.updatePrize(prize.id, prize)}} >
+    <StyledForm
+      onSubmit={(event) => {
+        event.preventDefault();
+        props.updatePrize(prize.id, prize);
+      }}
+    >
       <StyledLabel>Nagroda</StyledLabel>
-      <StyledInput type="text" name="name" value={prize.name} onChange={handleInputChange} />
+      <StyledInput
+        type="text"
+        name="name"
+        value={prize.name}
+        onChange={handleInputChange}
+      />
       <StyledLabel>Punkty</StyledLabel>
-      <StyledInput type="number" name="value" value={prize.value} onChange={handleInputChange} />
+      <StyledInput
+        type="number"
+        name="value"
+        value={prize.value}
+        onChange={handleInputChange}
+      />
       <StyledRow>
         <AddButton>Edytuj nagrodę</AddButton>
-        <DeleteButtonText onClick={() => props.setEditing(false)}> Anuluj </DeleteButtonText>
+        <DeleteButtonText onClick={() => props.setEditing(false)}>
+          {' '}
+          Anuluj{' '}
+        </DeleteButtonText>
       </StyledRow>
     </StyledForm>
   );

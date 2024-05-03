@@ -1,18 +1,18 @@
 //import {PropTypes}  from "react/prop-types"'
 //import DEFAULT_IMAGE from "../../../images/icons/dist_/ProfileUser";
 //import STAR_ICON from "../../../images/icons/dist_/Star";
-import styled, { IStyledComponent } from "styled-components";
-import Paragraph from "../../atoms/Paragraph/Paragraph";
-import ProfileImage from "../../atoms/ProfileImage/ProfileImage";
-import STAR_ICON_SVG from "/star.svg";
-import ReturnButton from "../../atoms/Buttons/ReturnButton";
-import { NavLink } from "react-router-dom";
-import React from "react";
-import ProfileImageSVG from "/profile-user.svg";
-import { ThemeTypes } from "../../../theme/appTheme";
+import styled, { IStyledComponent } from 'styled-components';
+import Paragraph from '../../atoms/Paragraph/Paragraph';
+import ProfileImage from '../../atoms/ProfileImage/ProfileImage';
+import STAR_ICON_SVG from '/star.svg';
+import ReturnButton from '../../atoms/Buttons/ReturnButton';
+import { NavLink } from 'react-router-dom';
+import React from 'react';
+import ProfileImageSVG from '/profile-user.svg';
+import { ThemeTypes } from '../../../theme/appTheme';
 
 interface StyledStudentHeaderInterface {
-  theme: ThemeTypes
+  theme: ThemeTypes;
 }
 
 const StyledStudentHeader = styled.header<StyledStudentHeaderInterface>`
@@ -65,10 +65,10 @@ const StyledIcon = styled.img`
 
 //type Item = [string, number, string];
 type ItemsTypes = {
-  name?: string,
-  points?: number,
-  image?: string,
-  studentId?: string
+  name?: string;
+  points?: number;
+  image?: string;
+  studentId?: string;
 };
 
 //{ name, points, image }: Record<string, string | number| undefined>
@@ -76,16 +76,16 @@ const StudentHeader = ({ name, points, image }: ItemsTypes): JSX.Element => {
   return (
     <StyledStudentHeader>
       <StyledMainGroup>
-        <ProfileImage src={ProfileImageSVG} alt=""/>
+        <ProfileImage src={ProfileImageSVG} alt="" />
         <StyledData>
           <StyledName>{name}</StyledName>
           <StyledPointsGroup>
-            <StyledIcon src={STAR_ICON_SVG} alt={"star"}></StyledIcon>
+            <StyledIcon src={STAR_ICON_SVG} alt={'star'}></StyledIcon>
             <StyledPoints>{points}</StyledPoints>
           </StyledPointsGroup>
         </StyledData>
       </StyledMainGroup>
-      <ReturnButton exit={"true"} as={NavLink} to="/"/>
+      <ReturnButton exit={'true'} as={NavLink} to="/" />
     </StyledStudentHeader>
   );
 };

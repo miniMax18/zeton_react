@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import type { ThemeTypes } from '../../../theme/appTheme';
+import type { ThemeTypes } from '@/theme/appTheme';
 
 interface StyledInputInterface {
-  theme: ThemeTypes
-};
+  theme: ThemeTypes;
+}
 
 interface StyledRowInterface {
-  theme: ThemeTypes
-};
+  theme: ThemeTypes;
+}
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
@@ -26,7 +26,8 @@ export const StyledInput = styled.input<StyledInputInterface>`
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-size: 1.25rem;
-  @media only screen and (max-width: ${({ theme }: StyledInputInterface) => theme.mediaMaxSize.xs}) {
+  @media only screen and (max-width: ${({ theme }: StyledInputInterface) =>
+      theme.mediaMaxSize.xs}) {
     font-size: ${({ theme }: StyledInputInterface) => theme.fontSize.xxs};
   }
 `;
@@ -34,7 +35,8 @@ export const StyledInput = styled.input<StyledInputInterface>`
 export const StyledRow = styled.div<StyledRowInterface>`
   display: flex;
   justify-content: space-between;
-  @media only screen and (max-width: ${({ theme }: StyledRowInterface) => theme.mediaMaxSize.xs}) {
+  @media only screen and (max-width: ${({ theme }: StyledRowInterface) =>
+      theme.mediaMaxSize.xs}) {
     flex-direction: column;
   }
 `;

@@ -10,8 +10,8 @@ import React from 'react';
 
 type PropsType = {
   setEditing: (e: boolean) => void;
-  currentTask: any,
-  updateTask:(arg1: any, arg2: any) => void;
+  currentTask: any;
+  updateTask: (arg1: any, arg2: any) => void;
 };
 
 const EditPointsForm = (props: PropsType) => {

@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { useParams } from "react-router-dom";
+import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import HomeTemplate from '../components/templates/HomeTemplate';
 import Navbar from '../components/structures/Navbar/Navbar';
 import AwardsList from '../components/structures/Awards/AwardsList';
@@ -11,16 +11,14 @@ import Loading from '../components/atoms/Loading/Loading';
 import { useStudentById } from '../api/useStudentById';
 import { useAwards } from '../api/useAwards';
 import { useTasks } from '../api/useTasks';
-import React from 'react';
-
 
 const SettingsView = () => {
-  let { id } = useParams();
-  
-  const {student, isStudentLoading, isStudentError} = useStudentById(id)
-  const { awards, isAwardsLoading, isAwardsError} = useAwards(id)
-  const { tasks, isTasksLoading, isTasksError} = useTasks(id)
-  
+  const { id } = useParams();
+
+  const { student, isStudentLoading, isStudentError } = useStudentById(id);
+  const { awards, isAwardsLoading, isAwardsError } = useAwards(id);
+  const { tasks, isTasksLoading, isTasksError } = useTasks(id);
+
   const [showPrizes, setShowPrizes] = useState<boolean>(false);
   //const handlePrizes = () => setShowPrizes(!showPrizes);
   const [showPoints, setShowPoints] = useState<boolean>(false);
@@ -28,19 +26,24 @@ const SettingsView = () => {
   return (
     <HomeTemplate>
       {isStudentLoading && !isStudentError && <Loading />}
-      {!isStudentLoading && !isStudentError &&
-     <StudentHeader name={student?.first_name}
-     points={student?.total_points}
-     studentId={id} />
-      }
-    
+      {!isStudentLoading && !isStudentError && (
+        <StudentHeader
+          name={student?.first_name}
+          points={student?.total_points}
+          studentId={id}
+        />
+      )}
+
       <MainBox>
-        <ButtonBar onClick={ () => (setShowPrizes(!showPrizes))} text="Nagrody" />
+        <ButtonBar onClick={() => setShowPrizes(!showPrizes)} text="Nagrody" />
         {isAwardsLoading && !isAwardsError && <Loading />}
         {showPrizes && <AwardsList awards={awards} studentId={id} />}
-        <ButtonBar onClick={() => setShowPoints(!showPoints)} text="Zachowania" />
+        <ButtonBar
+          onClick={() => setShowPoints(!showPoints)}
+          text="Zachowania"
+        />
         {isTasksLoading && !isTasksError && <Loading />}
-        {(showPoints == true) && <PointsList tasksList={tasks} studentId={id} />}
+        {showPoints && <PointsList tasksList={tasks} studentId={id} />}
         <ButtonBar text="Konsekwencje" onClick={undefined} />
         <ButtonBar text="Informacje o dziecku" onClick={undefined} />
         <ButtonBar text="Mój profil" onClick={undefined} />
@@ -50,4 +53,4 @@ const SettingsView = () => {
   );
 };
 
-export default SettingsView
+export default SettingsView;

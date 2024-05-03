@@ -8,19 +8,21 @@ import AddPointsForm from './AddPointsForm';
 import EditPointsForm from './EditPointsForm';
 import React from 'react';
 
-const PointsList = ({tasksList, studentId}: any) => {
+const PointsList = ({ tasksList, studentId }: any) => {
   const [tasks, setTasks] = useState(tasksList);
   const [editing, setEditing] = useState(false);
 
   const initialFormState = { id: null, name: '', value: '' };
   const [currentTask, setCurrentTask] = useState(initialFormState);
 
-  const [currentStudent, setCurrentStudent] = useState(studentId)
+  const [currentStudent, setCurrentStudent] = useState(studentId);
 
   useEffect(() => {
-    const filteredTasks = tasks.filter((task: any) => task.student === currentStudent)
-    setTasks(filteredTasks)
-  }, [])
+    const filteredTasks = tasks.filter(
+      (task: any) => task.student === currentStudent
+    );
+    setTasks(filteredTasks);
+  }, []);
 
   const addTask = (task: any) => {
     task.id = tasks.length + 1;

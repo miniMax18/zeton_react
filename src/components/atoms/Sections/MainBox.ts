@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { ThemeTypes } from '../../../theme/appTheme';
 
 interface MainBoxInterface {
- theme: ThemeTypes
+  theme: ThemeTypes;
 }
 
 const MainBox = styled.div<MainBoxInterface>`
