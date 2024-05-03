@@ -1,5 +1,5 @@
-import useSWR from "swr";
-import { ENDPOINT } from "../const/endpoints.const";
+import useSWR from 'swr';
+import { ENDPOINT } from '../const/endpoints.const';
 
 type StudentByIdObject = {
   pk: number;
@@ -24,7 +24,7 @@ const fetcher = (...args: any) =>
 const useStudentById = (id: any): UseStudentByIdObjectDataResponse => {
   const { data, error } = useSWR<GetStudentsByFetcher>(
     ENDPOINT.studentId,
-    fetcher,
+    fetcher
   );
 
   return {

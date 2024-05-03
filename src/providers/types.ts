@@ -3,6 +3,6 @@ export interface Authentication {
 }
 
 export interface TokenAction {
-  type: "set" | "clear";
+  type: 'set' | 'clear';
   token: string | null;
 }

@@ -1,31 +1,33 @@
-import React, { useState } from "react";
-import { Heading } from "../components/atoms/Heading/Heading.ts";
-import MainBox from "../components/atoms/Sections/MainBox.ts";
-import { StyledArticle } from "../components/atoms/Sections/Article.ts";
+import React, { useState } from 'react';
+import { Heading } from '../components/atoms/Heading/Heading.ts';
+import MainBox from '../components/atoms/Sections/MainBox.ts';
+import { StyledArticle } from '../components/atoms/Sections/Article.ts';
 import {
   StyledForm,
   StyledInput,
   StyledLabel,
-} from "../components/atoms/Form/Form.ts";
-import { type User } from "../api/Authentication/userTypes.ts";
-import Button from "../components/atoms/Buttons/Button.ts";
-import useAuthenticateUser from "../api/Authentication/authenticateUser.ts";
-import { useTokenDispatch } from "../providers/AuthProvider.tsx";
-import { setToken } from "../providers/authenticationActions.ts";
+} from '../components/atoms/Form/Form.ts';
+import { type User } from '../api/Authentication/userTypes.ts';
+import Button from '../components/atoms/Buttons/Button.ts';
+import useAuthenticateUser from '../api/Authentication/authenticateUser.ts';
+import { useTokenDispatch } from '../providers/AuthProvider.tsx';
+import { setToken } from '../providers/authenticationActions.ts';
 
 const Login = () => {
   const [formData, setFormData] = useState<User>({
-    userName: "",
-    password: "",
+    userName: '',
+    password: '',
   });
 
   const dispatch = useTokenDispatch();
 
   const { trigger, isMutating, error } = useAuthenticateUser();
 
-  const handleSubmit = async (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleSubmit = async (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     event.preventDefault();
-    console.log('login form submit')
+    console.log('login form submit');
     const response = await trigger({
       username: formData.userName,
       password: formData.password,
@@ -62,7 +64,11 @@ const Login = () => {
             required
           />
           {error && <div>Błąd logowania. Spróbuj ponownie.</div>}
-          <Button type="button" disabled={isMutating} onClick={(event) => handleSubmit(event)}>
+          <Button
+            type="button"
+            disabled={isMutating}
+            onClick={(event) => handleSubmit(event)}
+          >
             Zaloguj się
           </Button>
         </StyledForm>

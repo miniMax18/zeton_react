@@ -1,10 +1,9 @@
-import React, { Fragment } from "react";
-import { Helmet } from "react-helmet";
+import React, { Fragment } from 'react';
+import { Helmet } from 'react-helmet';
 import ZetonFaviconBlue from './images/icons/zeton-favicon-blue.png';
-import HelmetDispatcher from "react-helmet-async/lib/Dispatcher";
+import HelmetDispatcher from 'react-helmet-async/lib/Dispatcher';
 
 const Head = (): JSX.Element => (
-  
   <Helmet>
     <link rel="icon" href={ZetonFaviconBlue} />
     <meta name="description" content="Application Zeton" />

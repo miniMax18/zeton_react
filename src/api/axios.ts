@@ -1,11 +1,11 @@
-import axios, { AxiosInstance } from "axios";
+import axios, { AxiosInstance } from 'axios';
 
 const axiosInstance = (): AxiosInstance => {
   return axios.create({
-    baseURL: "http://localhost:8000/api/",
+    baseURL: 'http://localhost:8000/api/',
     headers: {
-      "content-type": "application/json; charset=utf-8",
-      accept: "application/json",
+      'content-type': 'application/json; charset=utf-8',
+      accept: 'application/json',
     },
   });
 };

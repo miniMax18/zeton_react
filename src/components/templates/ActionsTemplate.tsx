@@ -1,13 +1,13 @@
-import React from "react";
-import styled from "styled-components";
-import { ThemeTypes } from "../../theme/appTheme";
+import React from 'react';
+import styled from 'styled-components';
+import { ThemeTypes } from '../../theme/appTheme';
 
 type ActionType = string;
 
 interface StyledActionsTemplateInterface {
-  theme: ThemeTypes,
-  action: ActionType
-};
+  theme: ThemeTypes;
+  action: ActionType;
+}
 
 const StyledActionsTemplate = styled.section<StyledActionsTemplateInterface>`
   position: absolute;
@@ -22,7 +22,7 @@ const StyledActionsTemplate = styled.section<StyledActionsTemplateInterface>`
   justify-content: flex-start;
   transition: transform 0.8s ease-in-out;
   transform: ${({ action }) =>
-    action === "true" ? "translateX(0)" : "translateX(105vw)"};
+    action === 'true' ? 'translateX(0)' : 'translateX(105vw)'};
   padding: 40px;
   z-index: 19;
 
@@ -33,11 +33,14 @@ const StyledActionsTemplate = styled.section<StyledActionsTemplateInterface>`
   }
 `;
 interface ActionsTemplateInterface {
-    children: JSX.Element[],
-    action: ActionType
-};
+  children: JSX.Element[];
+  action: ActionType;
+}
 
-const ActionsTemplate = ({ children, action }: ActionsTemplateInterface): JSX.Element => (
+const ActionsTemplate = ({
+  children,
+  action,
+}: ActionsTemplateInterface): JSX.Element => (
   <StyledActionsTemplate action={action}>{children}</StyledActionsTemplate>
 );
 

@@ -3,13 +3,13 @@ import { AddButton } from '../../atoms/Buttons/LightButtons';
 import { StyledForm, StyledInput, StyledLabel } from '../../atoms/Form/Form';
 
 type InitialPrizesStateTypes = {
-  id: number|null, 
-  name: string, 
-  value: string 
+  id: number | null;
+  name: string;
+  value: string;
 };
 
 type AddPrizeFormPropsTypes = {
-  addPrize: (init:InitialPrizesStateTypes) => void
+  addPrize: (init: InitialPrizesStateTypes) => void;
 };
 
 const AddPrizeForm = (props: AddPrizeFormPropsTypes) => {

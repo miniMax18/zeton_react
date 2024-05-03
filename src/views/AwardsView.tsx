@@ -1,9 +1,9 @@
-import { useParams } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 import HomeTemplate from '@/components/templates/HomeTemplate';
 import MainBox from '@/components/atoms/Sections/MainBox';
 import Navbar from '@/components/structures/Navbar/Navbar';
 import CustomSelect from '@/components/modules/CustomSelect/CustomSelect';
-import Loading from "@/components/atoms/Loading/Loading";
+import Loading from '@/components/atoms/Loading/Loading';
 import StudentHeader from '@/components/structures/StudentHeader/StudentHeader';
 import { StyledContainer } from '@/components/atoms/Sections/Containers';
 import {
@@ -12,9 +12,9 @@ import {
   StyledHeading,
 } from '@/components/atoms/Heading/Heading';
 // funkcje-hooki swr
-import { useAwards } from "@/api/useAwards";
+import { useAwards } from '@/api/useAwards';
 import { useStudentById } from '@/api/useStudentById';
-import React from "react";
+import React from 'react';
 
 const AwardsView = () => {
   const { id } = useParams();

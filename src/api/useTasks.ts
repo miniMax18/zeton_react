@@ -1,5 +1,5 @@
-import { ENDPOINT } from "../const/endpoints.const";
-import useSWR from "swr";
+import { ENDPOINT } from '../const/endpoints.const';
+import useSWR from 'swr';
 
 type TaskObject = {
   id: number;
@@ -9,23 +9,24 @@ type TaskObject = {
 };
 
 type UseTasksObjectDataResponse = {
-  tasks?: TaskObject[],
-  isTasksLoading: boolean,
-  isTasksError: boolean,
+  tasks?: TaskObject[];
+  isTasksLoading: boolean;
+  isTasksError: boolean;
 };
 
 type GetTasksByFetcher = {
-  tasks: TaskObject[]
+  tasks: TaskObject[];
 };
 
-const fetcher = (...args: any) => fetch(...args as [any]).then((res) => res.json());
+const fetcher = (...args: any) =>
+  fetch(...(args as [any])).then((res) => res.json());
 
 const useTasks = (id: any): UseTasksObjectDataResponse => {
-  const URL = ENDPOINT.tasksId.replace("{:id}", id);
+  const URL = ENDPOINT.tasksId.replace('{:id}', id);
   // TODO type of error
   const { data, error } = useSWR<GetTasksByFetcher>(URL, fetcher);
 
-  console.log(data)
+  console.log(data);
 
   return {
     tasks: data?.tasks,

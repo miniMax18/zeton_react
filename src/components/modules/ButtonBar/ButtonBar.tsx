@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Button from '@/components/atoms/Buttons/Button';
 import CustomArrow from '@/components/atoms/Buttons/CustomArrow';
 
-
 const StyledBlueArrow = styled(CustomArrow)`
   &::before {
     border-top: var(--size) solid #4169e1;
@@ -24,9 +23,9 @@ const StyledButtonBar = styled(Button)`
   cursor: pointer;
 `;
 type PropTypesButtonBar = {
-  text: string, 
-  onClick?: React.MouseEventHandler<HTMLButtonElement>
-}
+  text: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+};
 
 const ButtonBar = ({ text, onClick }: PropTypesButtonBar): JSX.Element => {
   return (

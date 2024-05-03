@@ -1,5 +1,5 @@
-import { ENDPOINT } from "../const/endpoints.const";
-import useSWR from "swr";
+import { ENDPOINT } from '../const/endpoints.const';
+import useSWR from 'swr';
 
 type AwardObject = {
   id: number;
@@ -9,22 +9,23 @@ type AwardObject = {
 };
 
 type UseAwardsObjectDataResponse = {
-  awards?: AwardObject[],
-  isAwardsLoading: boolean,
-  isAwardsError: boolean,
+  awards?: AwardObject[];
+  isAwardsLoading: boolean;
+  isAwardsError: boolean;
 };
 
 type GetPrizesByFetcher = {
-  prizes: AwardObject[]
+  prizes: AwardObject[];
 };
 
-const fetcher = (...args: any[]) => fetch(...args as [any]).then((res) => res.json());
+const fetcher = (...args: any[]) =>
+  fetch(...(args as [any])).then((res) => res.json());
 
 const useAwards = (id: any): UseAwardsObjectDataResponse => {
-  const URL = ENDPOINT.prizesId.replace("{:id}", id)
+  const URL = ENDPOINT.prizesId.replace('{:id}', id);
   const { data, error } = useSWR<GetPrizesByFetcher>(URL, fetcher);
 
-  console.log(data)
+  console.log(data);
 
   return {
     awards: data?.prizes,

@@ -1,5 +1,5 @@
-import { styled } from "styled-components";
-import { type ThemeTypes } from "../../../theme/appTheme";
+import { styled } from 'styled-components';
+import { type ThemeTypes } from '../../../theme/appTheme';
 
 interface StyledFormInterface {}
 

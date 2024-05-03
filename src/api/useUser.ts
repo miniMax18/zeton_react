@@ -1,5 +1,5 @@
-import useSWR, { type SWRResponse } from "swr";
-import { ENDPOINT } from "../const/endpoints.const";
+import useSWR, { type SWRResponse } from 'swr';
+import { ENDPOINT } from '../const/endpoints.const';
 
 type UserObject = {
   user: string;
@@ -22,7 +22,7 @@ const fetcher = (...args: [string]) =>
 const useUser = (): UseUserObjectDataResponse => {
   const { data, error }: SWRResponse = useSWR<GetUserByFetcher>(
     ENDPOINT.currentUser,
-    fetcher,
+    fetcher
   );
 
   return {

@@ -5,19 +5,19 @@ const initialState = {
 
 const userReducer = (state = initialState, { payload, type }: any) => {
   switch (type) {
-    case "GET_STUDENTS": {
+    case 'GET_STUDENTS': {
       return {
         ...state,
         students: [...payload.students],
       };
     }
-    case "ADD_CHOOSEN_STUDENT": {
+    case 'ADD_CHOOSEN_STUDENT': {
       return {
         ...state,
         student: payload.student,
       };
     }
-    case "REMOVE_CHOOSEN_STUDENT": {
+    case 'REMOVE_CHOOSEN_STUDENT': {
       return {
         ...state,
         student: payload.student,

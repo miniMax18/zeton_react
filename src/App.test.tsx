@@ -9,15 +9,14 @@ test('demo', () => {
 });
 
 describe('render', () => {
-  
   it('renders the main page', () => {
     //const component = ReactTestUtils.renderIntoDocument()
     const component = render(
-    <MemoryRouter>
-      <App />
-    </MemoryRouter>
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
     );
     expect(true).toBeTruthy();
-    expect(component).toBe(component)
+    expect(component).toBe(component);
   });
 });

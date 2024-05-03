@@ -1,6 +1,6 @@
-import useSWRMutation from "swr/mutation";
-import { type AxiosResponse } from "axios";
-import axiosInstance from "../axios.ts";
+import useSWRMutation from 'swr/mutation';
+import { type AxiosResponse } from 'axios';
+import axiosInstance from '../axios.ts';
 
 type AuthenticateResponse = {
   token: string;
@@ -11,10 +11,10 @@ type AuthenticateBody = {
   password: string;
 };
 
-const postUserUrl = "token-auth/";
+const postUserUrl = 'token-auth/';
 const fetcher = async (
   url: string,
-  { arg }: { arg: AuthenticateBody },
+  { arg }: { arg: AuthenticateBody }
 ): Promise<AxiosResponse<AuthenticateResponse>> =>
   axiosInstance().post(url, arg);
 

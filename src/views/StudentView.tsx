@@ -1,13 +1,13 @@
-import StudentTemplate from "../components/templates/StudentTemplate";
-import HomeTemplate from "../components/templates/HomeTemplate";
-import Navbar from "../components/structures/Navbar/Navbar";
-import Loading from "../components/atoms/Loading/Loading";
+import StudentTemplate from '../components/templates/StudentTemplate';
+import HomeTemplate from '../components/templates/HomeTemplate';
+import Navbar from '../components/structures/Navbar/Navbar';
+import Loading from '../components/atoms/Loading/Loading';
 // funkcje-hooki swr
-import { useStudentById } from "../api/useStudentById";
-import React from "react";
+import { useStudentById } from '../api/useStudentById';
+import React from 'react';
 
 const StudentView = () => {
-  const pathId = window.location.pathname.replace("/", "");
+  const pathId = window.location.pathname.replace('/', '');
   const { student, isStudentLoading, isStudentError } = useStudentById(pathId);
   return (
     <HomeTemplate>

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { ThemeTypes } from '../../../theme/appTheme';
 
 interface HeadingPropsInterface {
-  theme: ThemeTypes,
+  theme: ThemeTypes;
   big?: boolean;
 }
 
