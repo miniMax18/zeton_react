@@ -1,5 +1,7 @@
 import useSWR, { type SWRResponse } from "swr";
 import { ENDPOINT } from "../const/endpoints.const";
+import type {AxiosResponse} from "axios";
+import axiosInstance from "./axios.ts";
 
 type UserObject = {
   user: string;
@@ -16,9 +18,12 @@ type GetUserByFetcher = {
 };
 
 // adding SWR
-const fetcher = (...args: [string]) =>
-  fetch(...(args as unknown as [string])).then((res) => res.json());
-
+// const fetcher = (...args: [string]) =>
+//   fetch(...(args as unknown as [string])).then((res) => res.json());
+const fetcher = async (
+  url: string,
+): Promise<AxiosResponse<any>> =>
+  axiosInstance().get(url);
 const useUser = (): UseUserObjectDataResponse => {
   const { data, error }: SWRResponse = useSWR<GetUserByFetcher>(
     ENDPOINT.currentUser,
@@ -26,9 +31,9 @@ const useUser = (): UseUserObjectDataResponse => {
   );
 
   return {
-    user: data?.user,
-    isUserLoading: !error && (!data || !data.users),
-    isUserError: error,
+    user: data?.data?.username,
+    isUserLoading: !data,
+    isUserError: !!error,
   };
 };
 

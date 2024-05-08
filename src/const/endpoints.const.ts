@@ -1,13 +1,13 @@
 import { loadEnv } from 'vite';
-
+const BASE_URL = process.env.VITE_REACT_APP_API_URL;
 const API_ENDPOINTS = {
-  currentUser: "/api/users/current-user/",
-  studentsList: "/api/users/students/",
-  prizesList: "/api/users/prizes/",
-  tasksList: "/api/users/tasks/",
-  studentId: "/api/users/students/{:id}",
-  prizesId: "/api/users/prizes/{:id}",
-  tasksId: "/api/users/tasks/{:id}",
+  currentUser: BASE_URL + "/api/current-user/",
+  studentsList: BASE_URL + "/api/students/",
+  prizesList: BASE_URL + "/api/prizes/",
+  tasksList: BASE_URL + "/api/tasks/",
+  studentId: BASE_URL + "/api/students/{:id}",
+  prizesId: BASE_URL + "/api/prizes/{:id}",
+  tasksId: BASE_URL + "/api/tasks/{:id}",
 };
 
 const MOCK_ENDPOINTS = {

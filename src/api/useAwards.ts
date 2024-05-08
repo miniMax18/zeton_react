@@ -21,15 +21,13 @@ type GetPrizesByFetcher = {
 const fetcher = (...args: any[]) => fetch(...args as [any]).then((res) => res.json());
 
 const useAwards = (id: any): UseAwardsObjectDataResponse => {
-  const URL = ENDPOINT.prizesId.replace("{:id}", id)
+  const URL = process.env.VITE_REACT_APP_API_URL + ENDPOINT.prizesId.replace("{:id}", id)
   const { data, error } = useSWR<GetPrizesByFetcher>(URL, fetcher);
-
-  console.log(data)
 
   return {
     awards: data?.prizes,
     isAwardsLoading: !error && (!data || !data.prizes),
-    isAwardsError: error,
+    isAwardsError: !!error,
   };
 };
 
