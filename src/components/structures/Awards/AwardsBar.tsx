@@ -8,24 +8,27 @@ import {
 import ActionsTemplate from '../../templates/ActionsTemplate';
 import { StyledContainer } from '../../atoms/Sections/Containers';
 import CustomSelect from '../../modules/CustomSelect/CustomSelect';
-import  {dataa as datamock} from '../../../mockyClient';
+import { dataa as datamock } from '../../../mockyClient';
 import React from 'react';
 
 type AwardsBarPropTypes = {
-  points: any,
-  handlePanel: any,
-  panel: any
+  points: any;
+  handlePanel: any;
+  panel: any;
 };
 
 type DataMockTypes = {
-  id: number,
-  name: string,
-  value: number,
-  student: number
+  id: number;
+  name: string;
+  value: number;
+  student: number;
 };
 
-
-const AwardsBar = ({ points, handlePanel, panel }: AwardsBarPropTypes): JSX.Element => {
+const AwardsBar = ({
+  points,
+  handlePanel,
+  panel,
+}: AwardsBarPropTypes): JSX.Element => {
   const [activePanel, setActivePanel] = useState<any>(panel);
 
   useEffect(() => {

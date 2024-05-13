@@ -1,18 +1,19 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import MainTemplate from "./components/templates/MainTemplate";
-import HomeView from "./views/HomeView";
-import StudentView from "./views/StudentView";
-import TasksView from "./views/TasksView";
-import InfoView from "./views/InfoView";
-import AwardsView from "./views/AwardsView";
-import ConsequencesView from "./views/ConsequencesView";
-import SettingsView from "./views/SettingsView";
-import Head from "./Head";
-import { ROUTE_NAME } from "./const/routing.const";
-import Login from "./views/Login.tsx";
-import AuthProvider from "./providers/AuthProvider.tsx";
-function App() {
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import MainTemplate from './components/templates/MainTemplate';
+import HomeView from './views/HomeView';
+import StudentView from './views/StudentView';
+import TasksView from './views/TasksView';
+import InfoView from './views/InfoView';
+import AwardsView from './views/AwardsView';
+import ConsequencesView from './views/ConsequencesView';
+import SettingsView from './views/SettingsView';
+import Head from './Head';
+import { ROUTE_NAME } from './const/routing.const';
+import Login from './views/Login.tsx';
+import AuthProvider from './providers/AuthProvider.tsx';
+
+function App(): React.ReactNode {
   return (
     <div className="App">
       <Head />

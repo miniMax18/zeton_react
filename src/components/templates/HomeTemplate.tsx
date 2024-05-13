@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { ThemeTypes } from '../../theme/appTheme';
 
 interface StyledContainerInterface {
-  theme: ThemeTypes
+  theme: ThemeTypes;
 }
 export const StyledContainer = styled.div<StyledContainerInterface>`
   position: relative;
@@ -26,6 +26,5 @@ export const StyledContainer = styled.div<StyledContainerInterface>`
 const HomeTemplate = ({ children }: any) => (
   <StyledContainer>{children}</StyledContainer>
 );
-
 
 export default HomeTemplate;

@@ -16,7 +16,7 @@ type UseStudentByIdObjectDataResponse = {
 };
 
 type GetStudentsByFetcher = {
-  data: StudentByIdObject[];
+  data: StudentByIdObject;
 };
 
 // adding SWR

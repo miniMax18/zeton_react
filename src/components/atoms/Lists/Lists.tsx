@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 import type { ThemeTypes } from '../../../theme/appTheme';
 import React from 'react';
 interface ListsStyledInterface {
- theme?: ThemeTypes
+  theme?: ThemeTypes;
 }
 
 export const StyledUl = styled.ul<ListsStyledInterface>`
@@ -55,15 +55,15 @@ const ButtonRow = styled(TextRow)<ListsStyledInterface>`
 
 type PropsTypeLiElement = {
   //[x: string]: any;
-  id: number,
+  id: number;
   delete: any;
   edit: any;
   points: ReactNode;
   text: ReactNode;
-}
+};
 
 const LiElement = (props: PropsTypeLiElement) => {
-  console.log(props)
+  console.log(props);
   return (
     <StyledLiElement>
       <TextRow>

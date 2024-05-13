@@ -4,19 +4,19 @@ import type {AxiosResponse} from "axios";
 import axiosInstance from "./axios.ts";
 
 type StudentObject = {
-  pk: number,
-  first_name?: string,
-  total_points?: number,
+  pk: number;
+  first_name?: string;
+  total_points?: number;
 };
 
-type UseStudentByIdObjectDataResponse = {
-  students?: StudentObject[],
-  isStudentsLoading: boolean,
-  isStudentsError: boolean,
+type UseStudentObjectDataResponse = {
+  students?: StudentObject[];
+  isStudentsLoading: boolean;
+  isStudentsError: boolean;
 };
 
 type GetStudentsByFetcher = {
-  data: StudentObject[]
+  data: StudentObject[];
 };
 
 // adding SWR
@@ -25,7 +25,7 @@ const fetcher = async (
   url: string,
 ): Promise<AxiosResponse<any>> =>
   axiosInstance().get(url);
-const useStudents = (): UseStudentByIdObjectDataResponse => {
+const useStudents = (): UseStudentObjectDataResponse => {
   const { data, error } = useSWR<GetStudentsByFetcher>(ENDPOINT.studentsList, fetcher);
 
   return {

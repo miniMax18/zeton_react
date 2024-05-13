@@ -10,10 +10,15 @@ export default defineConfig(({ mode }) => {
     define: {
       'process.env': env,
     },
-    server: {
-      watch: {
-        usePolling: true
-      }
-    }
+  resolve: {
+    alias: {
+      "@": "/src",
+    },
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['src/__tests__/setup_v1.ts'],
+  }
   }
 })

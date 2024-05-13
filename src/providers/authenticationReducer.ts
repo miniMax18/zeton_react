@@ -1,18 +1,18 @@
-import { type Authentication, type TokenAction } from "./types.ts";
+import { type Authentication, type TokenAction } from './types.ts';
 
 export type AuthenticationReducer = (
   token: Authentication,
-  action: TokenAction,
+  action: TokenAction
 ) => Authentication;
 
 export const authenticationReducer: AuthenticationReducer = (
   state,
-  action,
+  action
 ): Authentication => {
   switch (action.type) {
-    case "set":
+    case 'set':
       return { token: action.token };
-    case "clear":
+    case 'clear':
       return { token: null };
     default:
       // eslint-disable-next-line @typescript-eslint/restrict-template-expressions

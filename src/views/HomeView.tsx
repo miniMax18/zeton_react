@@ -1,16 +1,16 @@
 //import {Home24Px, Person24Px, SentimentVeryDissatisfied24Px, Settings24Px, Trophy} from "../images/icons/dist_/index";
-import React from "react";
-import styled from "styled-components";
-import { Heading } from "../components/atoms/Heading/Heading";
-import { AddButton } from "../components/atoms/Buttons/LightButtons";
-import Loading from "../components/atoms/Loading/Loading";
-import StudentCard from "../components/modules/StudentCard/StudentCard";
-import HomeTemplate from "../components/templates/HomeTemplate";
+import React from 'react';
+import styled from 'styled-components';
+import { Heading } from '../components/atoms/Heading/Heading';
+import { AddButton } from '../components/atoms/Buttons/LightButtons';
+import Loading from '../components/atoms/Loading/Loading';
+import StudentCard from '../components/modules/StudentCard/StudentCard';
+import HomeTemplate from '../components/templates/HomeTemplate';
 // funkcje-hooki swr
-import { useStudents } from "../api/useStudents";
+import { useStudents } from '../api/useStudents';
 //import StarSVG from "../images/icons/star.svg";
-import ProfileDefaultImage_SVG from "/profile-user.svg";
-import { useUser } from "../api/useUser.ts";
+import ProfileDefaultImage_SVG from '/profile-user.svg';
+import { useUser } from '../api/useUser.ts';
 
 const StyledHeadingWrapper = styled.header`
   width: 100%;
@@ -48,7 +48,7 @@ const HomeView = (): JSX.Element => {
       {user && (
         <HomeTemplate>
           <StyledHeadingWrapper>
-            <StyledHeading>Cześć, {user ? user : "Nieznajomy"}</StyledHeading>
+            <StyledHeading>Cześć, {user ? user : 'Nieznajomy'}</StyledHeading>
             <StyledHeading>wybierz podopiecznego</StyledHeading>
           </StyledHeadingWrapper>
           <StyledUsersWrapper as="section">

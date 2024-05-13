@@ -2,17 +2,17 @@ import styled, { IStyledComponent } from 'styled-components';
 import type { ThemeTypes } from '../../../theme/appTheme';
 
 interface ButtonInterface {
-  theme?: ThemeTypes,
-  outline?: string,
-  disabled?: boolean
-};
+  theme?: ThemeTypes;
+  outline?: string;
+  disabled?: boolean;
+}
 //type Item = [string, boolean, boolean];
 //type Dictionary = { [key: string]: Item; }
 //Record<string, Item>
 
 const Button = styled.button<ButtonInterface>`
   background-color: ${({ theme, outline, disabled }) => {
-    if (outline === "true") {
+    if (outline === 'true') {
       return 'transparent';
     } else if (disabled === true) {
       return theme.grey;
@@ -24,13 +24,14 @@ const Button = styled.button<ButtonInterface>`
   font-size: ${({ theme }) => theme.fontSize.xs};
   text-transform: uppercase;
   color: ${({ theme, outline }) => (outline ? theme.primary : 'white')};
-  border: solid 1px ${({ theme, disabled }) => {
-    if (disabled) {
-      return 'transparent'
-    } else {
-      return theme.primary
-    }
-  }};
+  border: solid 1px
+    ${({ theme, disabled }) => {
+      if (disabled) {
+        return 'transparent';
+      } else {
+        return theme.primary;
+      }
+    }};
   width: 250px;
   height: 50px;
   padding: 17px;

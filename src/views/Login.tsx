@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { Heading } from "../components/atoms/Heading/Heading.ts";
-import MainBox from "../components/atoms/Sections/MainBox.ts";
-import { StyledArticle } from "../components/atoms/Sections/Article.ts";
+import React, { useState } from 'react';
+import { Heading } from '../components/atoms/Heading/Heading.ts';
+import MainBox from '../components/atoms/Sections/MainBox.ts';
+import { StyledArticle } from '../components/atoms/Sections/Article.ts';
 import {
   StyledForm,
   StyledInput,
@@ -16,8 +16,8 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [formData, setFormData] = useState<User>({
-    userName: "",
-    password: "",
+    userName: '',
+    password: '',
   });
 
   const dispatch = useTokenDispatch();
@@ -25,7 +25,9 @@ const Login = () => {
   const { trigger, isMutating, error } = useAuthenticateUser();
   const navigate = useNavigate();
 
-  const handleSubmit = async (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleSubmit = async (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     event.preventDefault();
     const response = await trigger({
       username: formData.userName,
@@ -64,7 +66,11 @@ const Login = () => {
             required
           />
           {error && <div>Błąd logowania. Spróbuj ponownie.</div>}
-          <Button type="button" disabled={isMutating} onClick={(event) => handleSubmit(event)}>
+          <Button
+            type="button"
+            disabled={isMutating}
+            onClick={(event) => handleSubmit(event)}
+          >
             Zaloguj się
           </Button>
         </StyledForm>

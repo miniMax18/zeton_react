@@ -1,21 +1,21 @@
 import { SetStateAction, useState } from 'react';
 import styled from 'styled-components';
-import Button from '../../atoms/Buttons/Button';
-import SelectHeader from '../../atoms/Heading/SelectHeader';
-import CustomArrow from '../../atoms/Buttons/CustomArrow';
-import MainBox from '../../atoms/Sections/MainBox';
-import { Subheading } from '../../atoms/Heading/Heading';
-//import  {dataa, dataa as datamock} from '../../../mockyClient';
+import Button from '@/components/atoms/Buttons/Button';
+import SelectHeader from '@/components/atoms/Heading/SelectHeader';
+import CustomArrow from '@/components/atoms/Buttons/CustomArrow';
+import MainBox from '@/components/atoms/Sections/MainBox';
+import { Subheading } from '@/components/atoms/Heading/Heading';
+//import  {dataa, dataa as datamock} from '@/../mockyClient';
 import React from 'react';
-import { ThemeTypes } from '../../../theme/appTheme';
+import { ThemeTypes } from '@/theme/appTheme';
 
 interface ListItemInterface {
-  theme: ThemeTypes
-};
+  theme: ThemeTypes;
+}
 
 interface DropdownListInterface {
-  theme: ThemeTypes
-};
+  theme: ThemeTypes;
+}
 
 const DropdownContainer = styled.div`
   margin: 0 auto;
@@ -67,27 +67,36 @@ const ListItem = styled.li<ListItemInterface>`
   }
 `;
 
- type DataObjectTypes = {
-  id: number,
-  name: string,
-  value: number,
-  student: number
+type DataObjectTypes = {
+  id: number;
+  name: string;
+  value: number;
+  student: number;
 };
 
 type CustomSelectPropTypes = {
-  title: any, 
-  data?: DataObjectTypes[], 
-  btnTitle: any
+  title: any;
+  data?: DataObjectTypes[];
+  btnTitle: any;
 };
 
-const CustomSelect = ({ title, data, btnTitle }: CustomSelectPropTypes): JSX.Element => {
+const CustomSelect = ({
+  title,
+  data,
+  btnTitle,
+}: CustomSelectPropTypes): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [selectedOption, setSelectedOption] = useState<SetStateAction<string[]>>([]);
+  const [selectedOption, setSelectedOption] = useState<
+    SetStateAction<string[]>
+  >([]);
   const [selectedHeader, setSelectedHeader] = useState<any[string]>([title]);
-  const [elemState, setElemState] = useState<SetStateAction<string|any>>('');
+  const [elemState, setElemState] = useState<SetStateAction<string | any>>('');
   const [disabled, setDisabled] = useState<boolean>(true);
 
-  const toggling = () => setIsOpen(()=>{return !isOpen});
+  const toggling = () =>
+    setIsOpen(() => {
+      return !isOpen;
+    });
 
   const onOptionClicked = (value: any, title: any) => () => {
     if (!value) return;
@@ -128,7 +137,7 @@ const CustomSelect = ({ title, data, btnTitle }: CustomSelectPropTypes): JSX.Ele
                 {data?.map((option) => (
                   <ListItem
                     tab-index="0"
-                    onClick={()=>onOptionClicked(option, title)}
+                    onClick={() => onOptionClicked(option, title)}
                     key={option.id}
                     role="option"
                   >

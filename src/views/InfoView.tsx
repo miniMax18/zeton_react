@@ -1,8 +1,8 @@
-import { connect } from "react-redux";
-import React from "react";
-import { type JSX } from "react/jsx-runtime";
-import HomeTemplate from "../components/templates/HomeTemplate";
-import Navbar from "../components/structures/Navbar/Navbar";
+import { connect } from 'react-redux';
+import React from 'react';
+import { type JSX } from 'react/jsx-runtime';
+import HomeTemplate from '../components/templates/HomeTemplate';
+import Navbar from '../components/structures/Navbar/Navbar';
 
 const InfoView = ({ student }: any): JSX.Element => {
   return (

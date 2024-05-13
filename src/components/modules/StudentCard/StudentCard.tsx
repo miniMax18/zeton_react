@@ -1,13 +1,13 @@
-import { Link } from "react-router-dom";
-import Paragraph from "../../atoms/Paragraph/Paragraph";
-import ProfileImage from "../../atoms/ProfileImage/ProfileImage";
-import ProfileDefaultImage_SVG from "/profile-user.svg";
-import styled from "styled-components";
-import React from "react";
-import { ThemeTypes } from "../../../theme/appTheme";
+import { Link } from 'react-router-dom';
+import Paragraph from '../../atoms/Paragraph/Paragraph';
+import ProfileImage from '../../atoms/ProfileImage/ProfileImage';
+import ProfileDefaultImage_SVG from '/profile-user.svg';
+import styled from 'styled-components';
+import React from 'react';
+import { ThemeTypes } from '../../../theme/appTheme';
 
 interface StyledStudentCardInterface {
-  theme: ThemeTypes
+  theme: ThemeTypes;
 }
 
 const StyledStudentCard = styled(Link)<StyledStudentCardInterface>`
@@ -31,9 +31,9 @@ const StyledName = styled(Paragraph)`
 `;
 
 type PropTypesStudentCard = {
-  name: any,
-  studentId: any, 
-  image: any
+  name: any;
+  studentId: any;
+  image: any;
 };
 
 const StudentCard = ({ name, studentId, image }: PropTypesStudentCard) => {

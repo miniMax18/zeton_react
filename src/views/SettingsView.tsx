@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import { useParams } from "react-router-dom";
-import HomeTemplate from "../components/templates/HomeTemplate";
-import Navbar from "../components/structures/Navbar/Navbar";
-import AwardsList from "../components/structures/Awards/AwardsList";
-import PointsList from "../components/structures/Tasks/PointsList";
-import StudentHeader from "../components/structures/StudentHeader/StudentHeader";
-import ButtonBar from "../components/modules/ButtonBar/ButtonBar";
-import MainBox from "../components/atoms/Sections/MainBox";
-import Loading from "../components/atoms/Loading/Loading";
-import { useStudentById } from "../api/useStudentById";
-import { useAwards } from "../api/useAwards";
-import { useTasks } from "../api/useTasks";
+import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import HomeTemplate from '../components/templates/HomeTemplate';
+import Navbar from '../components/structures/Navbar/Navbar';
+import AwardsList from '../components/structures/Awards/AwardsList';
+import PointsList from '../components/structures/Tasks/PointsList';
+import StudentHeader from '../components/structures/StudentHeader/StudentHeader';
+import ButtonBar from '../components/modules/ButtonBar/ButtonBar';
+import MainBox from '../components/atoms/Sections/MainBox';
+import Loading from '../components/atoms/Loading/Loading';
+import { useStudentById } from '../api/useStudentById';
+import { useAwards } from '../api/useAwards';
+import { useTasks } from '../api/useTasks';
 
 const SettingsView = () => {
   const { id } = useParams();

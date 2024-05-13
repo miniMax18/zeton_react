@@ -1,20 +1,20 @@
-import { useParams } from "react-router-dom";
-import HomeTemplate from "../components/templates/HomeTemplate";
-import MainBox from "../components/atoms/Sections/MainBox";
-import Navbar from "../components/structures/Navbar/Navbar";
-import CustomSelect from "../components/modules/CustomSelect/CustomSelect";
-import Loading from "../components/atoms/Loading/Loading";
-import StudentHeader from "../components/structures/StudentHeader/StudentHeader";
-import { StyledContainer } from "../components/atoms/Sections/Containers";
+import { useParams } from 'react-router-dom';
+import HomeTemplate from '../components/templates/HomeTemplate';
+import MainBox from '../components/atoms/Sections/MainBox';
+import Navbar from '../components/structures/Navbar/Navbar';
+import CustomSelect from '../components/modules/CustomSelect/CustomSelect';
+import Loading from '../components/atoms/Loading/Loading';
+import StudentHeader from '../components/structures/StudentHeader/StudentHeader';
+import { StyledContainer } from '../components/atoms/Sections/Containers';
 import {
   Subheading,
   StyledHeader,
   StyledHeading,
-} from "../components/atoms/Heading/Heading";
+} from '../components/atoms/Heading/Heading';
 // funkcje-hooki swr
-import { useTasks } from "../api/useTasks";
-import { useStudentById } from "../api/useStudentById";
-import React from "react";
+import { useTasks } from '../api/useTasks';
+import { useStudentById } from '../api/useStudentById';
+import React from 'react';
 
 const PointsView = () => {
   let { id } = useParams();

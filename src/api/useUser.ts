@@ -27,7 +27,7 @@ const fetcher = async (
 const useUser = (): UseUserObjectDataResponse => {
   const { data, error }: SWRResponse = useSWR<GetUserByFetcher>(
     ENDPOINT.currentUser,
-    fetcher,
+    fetcher
   );
 
   return {

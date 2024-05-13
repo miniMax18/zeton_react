@@ -4,6 +4,15 @@
       "useDefineForClassFields": true,
       "lib": ["DOM", "DOM.Iterable", "ESNext"],
       "allowJs": true,
+      "baseUrl": "./src",
+      "paths": {
+        "@/api/*": ["api/*"],
+        "@/components/*": ["components/*"],
+        "@/const/*": ["const/*"],
+        "@/images/*": ["images/*"],
+        "@/theme/*": ["theme/*"],
+        "@/views/*": ["views/*"]
+      },
       "skipLibCheck": true,
       "esModuleInterop": false,
       "allowSyntheticDefaultImports": true,
