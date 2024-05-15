@@ -1,5 +1,7 @@
 import { ENDPOINT } from '../const/endpoints.const';
 import useSWR from 'swr';
+import axiosInstance from './axios';
+import { AxiosResponse } from 'axios';
 
 type TaskObject = {
   id: number;
@@ -15,23 +17,25 @@ type UseTasksObjectDataResponse = {
 };
 
 type GetTasksByFetcher = {
-  tasks: TaskObject[];
+  data: TaskObject[];
 };
 
-const fetcher = (...args: any) =>
-  fetch(...(args as [any])).then((res) => res.json());
+const fetcher = async (
+  url: string,
+): Promise<AxiosResponse<any>> =>
+  axiosInstance().get(url);
 
 const useTasks = (id: any): UseTasksObjectDataResponse => {
-  const URL = ENDPOINT.tasksId.replace('{:id}', id);
+  // const URL = ENDPOINT.tasksList.replace('{:id}', id);
   // TODO type of error
-  const { data, error } = useSWR<GetTasksByFetcher>(URL, fetcher);
+  const { data, error } = useSWR<GetTasksByFetcher>(ENDPOINT.tasksList.replace('{:id}', id), fetcher);
 
   console.log(data);
 
   return {
-    tasks: data?.tasks,
-    isTasksLoading: !error && (!data || !data.tasks),
-    isTasksError: error,
+    tasks: data?.data,
+    isTasksLoading: !error && (!data || !data.data),
+    isTasksError: !!error,
   };
 };
 

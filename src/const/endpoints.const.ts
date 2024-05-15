@@ -4,10 +4,9 @@ const API_ENDPOINTS = {
   currentUser: BASE_URL + "/api/current-user/",
   studentsList: BASE_URL + "/api/students/",
   prizesList: BASE_URL + "/api/prizes/",
-  tasksList: BASE_URL + "/api/tasks/",
+  tasksList: BASE_URL + "/api/students/{:id}/tasks/",
   studentId: BASE_URL + "/api/students/{:id}",
-  prizesId: BASE_URL + "/api/prizes/{:id}",
-  tasksId: BASE_URL + "/api/tasks/{:id}",
+  prizesId: BASE_URL + "/api/students/{:id}/prizes/",
 };
 
 const MOCK_ENDPOINTS = {
