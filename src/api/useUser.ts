@@ -4,7 +4,8 @@ import type {AxiosResponse} from "axios";
 import axiosInstance from "./axios.ts";
 
 type UserObject = {
-  user: string;
+  id: number;
+  username: string;
 };
 
 type UseUserObjectDataResponse = {
@@ -14,7 +15,7 @@ type UseUserObjectDataResponse = {
 };
 
 type GetUserByFetcher = {
-  user: UserObject;
+  data: UserObject;
 };
 
 // adding SWR
