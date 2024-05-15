@@ -1,5 +1,7 @@
-import useSWR from 'swr';
-import { ENDPOINT } from '../const/endpoints.const';
+import useSWR from "swr";
+import { ENDPOINT } from "../const/endpoints.const";
+import type {AxiosResponse} from "axios";
+import axiosInstance from "./axios.ts";
 
 type StudentByIdObject = {
   pk: number;
@@ -14,23 +16,25 @@ type UseStudentByIdObjectDataResponse = {
 };
 
 type GetStudentsByFetcher = {
-  data: StudentByIdObject[];
+  data: StudentByIdObject;
 };
 
 // adding SWR
-const fetcher = (...args: any) =>
-  fetch(...(args as [any])).then((res) => res.json());
-
+const fetcher = async (
+  url: string,
+): Promise<AxiosResponse<any>> =>
+  axiosInstance().get(url);
 const useStudentById = (id: any): UseStudentByIdObjectDataResponse => {
   const { data, error } = useSWR<GetStudentsByFetcher>(
-    ENDPOINT.studentId,
-    fetcher
+    ENDPOINT.studentId.replace("{:id}", id),
+    fetcher,
   );
 
   return {
-    student: data?.data.filter((item) => item.pk === id)[0],
+    // student: data?.data.filter((item) => item.pk === id)[0],
+    student: data?.data,
     isStudentLoading: !error && (!data || !data.data),
-    isStudentError: error,
+    isStudentError: !!error,
   };
 };
 

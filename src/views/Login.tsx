@@ -6,12 +6,13 @@ import {
   StyledForm,
   StyledInput,
   StyledLabel,
-} from '../components/atoms/Form/Form.ts';
-import { type User } from '../api/Authentication/userTypes.ts';
-import Button from '../components/atoms/Buttons/Button.ts';
-import useAuthenticateUser from '../api/Authentication/authenticateUser.ts';
-import { useTokenDispatch } from '../providers/AuthProvider.tsx';
-import { setToken } from '../providers/authenticationActions.ts';
+} from "../components/atoms/Form/Form.ts";
+import { type User } from "../api/Authentication/userTypes.ts";
+import Button from "../components/atoms/Buttons/Button.ts";
+import useAuthenticateUser from "../api/Authentication/authenticateUser.ts";
+import { useTokenDispatch } from "../providers/AuthProvider.tsx";
+import { setToken } from "../providers/authenticationActions.ts";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [formData, setFormData] = useState<User>({
@@ -22,18 +23,19 @@ const Login = () => {
   const dispatch = useTokenDispatch();
 
   const { trigger, isMutating, error } = useAuthenticateUser();
+  const navigate = useNavigate();
 
   const handleSubmit = async (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     event.preventDefault();
-    console.log('login form submit');
     const response = await trigger({
       username: formData.userName,
       password: formData.password,
     });
 
     setToken(response.data.token, dispatch);
+    navigate("/")
   };
 
   return (

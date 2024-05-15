@@ -24,7 +24,7 @@ const StyledStudentCard = styled(Link)<StyledStudentCardInterface>`
   text-decoration: none;
 `;
 
-const StyledName: any = styled(Paragraph)`
+const StyledName = styled(Paragraph)`
   text-transform: capitalize;
   margin: 0;
   color: black;
@@ -38,8 +38,8 @@ type PropTypesStudentCard = {
 
 const StudentCard = ({ name, studentId, image }: PropTypesStudentCard) => {
   return (
-    <StyledStudentCard to={studentId}>
-      <ProfileImage src={image ? image.toString() : ProfileDefaultImage_SVG} />
+    <StyledStudentCard to={`/${studentId}`}>
+      <ProfileImage src={(image) ? image.toString() : ProfileDefaultImage_SVG} />
       <StyledName big={true}>{name}</StyledName>
     </StyledStudentCard>
   );

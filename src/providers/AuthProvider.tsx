@@ -28,8 +28,8 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     if (authentication.token) {
-      axios.defaults.headers.common['Authorization'] =
-        'JWT ' + authentication.token;
+      axios.defaults.headers.common["Authorization"] =
+        "Bearer " + authentication.token;
       localStorage.setItem(localStorageKey, authentication.token);
     } else {
       delete axios.defaults.headers.common['Authorization'];
