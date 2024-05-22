@@ -26,11 +26,7 @@ const fetcher = async (
   axiosInstance().get(url);
 
 const useTasks = (id: any): UseTasksObjectDataResponse => {
-  // const URL = ENDPOINT.tasksList.replace('{:id}', id);
-  // TODO type of error
   const { data, error } = useSWR<GetTasksByFetcher>(ENDPOINT.tasksList.replace('{:id}', id), fetcher);
-
-  console.log(data);
 
   return {
     tasks: data?.data,

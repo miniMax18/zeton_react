@@ -29,16 +29,13 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   );
 
   useEffect(() => {
-    console.log(authentication.token)
     if (authentication.token) {
       axios.defaults.headers.common["Authorization"] =
         "Bearer " + authentication.token;
       localStorage.setItem(localStorageKey, authentication.token);
     } else if(localStorage.getItem(localStorageKey)) {
       axios.defaults.headers.common["Authorization"] =
-        "Bearer " +localStorage.getItem(localStorageKey);
-      // delete axios.defaults.headers.common['Authorization'];
-      // localStorage.removeItem(localStorageKey);
+        "Bearer " + localStorage.getItem(localStorageKey);
     }
     else {
       navigate("/login");
