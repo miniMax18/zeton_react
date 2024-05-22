@@ -5,6 +5,7 @@ import {
   authenticationReducer,
   type AuthenticationReducer,
 } from './authenticationReducer.ts';
+import {useNavigate} from "react-router-dom";
 
 export const AuthenticationContext = createContext<Authentication>({
   token: null,
@@ -18,6 +19,7 @@ export const useTokenDispatch = () => useContext(TokenDispatchContext);
 
 const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const localStorageKey = 'token';
+  const navigate = useNavigate();
 
   const [authentication, dispatch] = useReducer<AuthenticationReducer>(
     authenticationReducer,
@@ -31,9 +33,12 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       axios.defaults.headers.common["Authorization"] =
         "Bearer " + authentication.token;
       localStorage.setItem(localStorageKey, authentication.token);
-    } else {
-      delete axios.defaults.headers.common['Authorization'];
-      localStorage.removeItem(localStorageKey);
+    } else if(localStorage.getItem(localStorageKey)) {
+      axios.defaults.headers.common["Authorization"] =
+        "Bearer " + localStorage.getItem(localStorageKey);
+    }
+    else {
+      navigate("/login");
     }
   }, [authentication, localStorageKey]);
 

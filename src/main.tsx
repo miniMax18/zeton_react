@@ -9,13 +9,13 @@ const documentRoot = document.getElementById('root') as HTMLElement;
 const root: ReactDOM.Root = ReactDOM.createRoot(documentRoot);
 root.render(
   <React.StrictMode>
-    <AuthProvider>
       <BrowserRouter basename="">
+    <AuthProvider>
         <HelmetProvider>
           <App />
         </HelmetProvider>
-      </BrowserRouter>
-    </AuthProvider>
+      </AuthProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

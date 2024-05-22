@@ -24,6 +24,7 @@ const fetcher = async (
   url: string,
 ): Promise<AxiosResponse<any>> =>
   axiosInstance().get(url);
+  
 const useStudentById = (id: any): UseStudentByIdObjectDataResponse => {
   const { data, error } = useSWR<GetStudentsByFetcher>(
     ENDPOINT.studentId.replace("{:id}", id),

@@ -16,7 +16,7 @@ import { useTasks } from '../api/useTasks';
 import { useStudentById } from '../api/useStudentById';
 import React from 'react';
 
-const PointsView = () => {
+const TasksView = () => {
   let { id } = useParams();
 
   const { student, isStudentLoading, isStudentError } = useStudentById(id);
@@ -54,4 +54,4 @@ const PointsView = () => {
   );
 };
 
-export default PointsView;
+export default TasksView;
