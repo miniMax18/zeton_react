@@ -22,6 +22,7 @@ const TasksView = () => {
   const { student, isStudentLoading, isStudentError } = useStudentById(id);
   const { tasks, isTasksLoading, isTasksError } = useTasks(id);
   console.log(tasks);
+  console.log(tasks?.filter((task) => task.student.toString() === id))
 
   return (
     <HomeTemplate>
