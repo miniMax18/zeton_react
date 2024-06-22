@@ -43,7 +43,6 @@ const DropdownList = styled.ul<DropdownListInterface>`
   border-radius: ${({ theme }: DropdownListInterface) => theme.radius};
   position: relative;
   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
-  padding-bottom: 1rem;
 `;
 
 const ListItem = styled.li<ListItemInterface>`

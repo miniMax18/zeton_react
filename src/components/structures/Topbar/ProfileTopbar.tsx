@@ -61,7 +61,7 @@ const ProfileTopbar = ({
 }: {
   studentData: StudentDataTypes;
 }): JSX.Element => {
-  // console.log(studentData);
+
   let { image, name, points }: StudentDataTypes = studentData;
 
   // <StyledProfileImage style={{backgroundImage: image? `url(${image})`:`url(${image})`}} alt=""/>

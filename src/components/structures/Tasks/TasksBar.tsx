@@ -18,12 +18,11 @@ const TasksBar = ({ handlePanel, panel, studentData }: any) => {
   let { id } = useParams();
   const [activePanel, setActivePanel] = useState(panel);
   const { tasks, isTasksLoading, isTasksError } = useTasks(id);
-  // console.log(tasks);
 
   useEffect(() => {
     setActivePanel(panel);
   }, [panel]);
-  
+
   return (
     <ActionsTemplate action={activePanel === 'tasks' ? 'true' : 'false'}>
       <ProfileTopbar studentData={studentData} />
