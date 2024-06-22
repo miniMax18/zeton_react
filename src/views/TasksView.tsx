@@ -21,8 +21,6 @@ const TasksView = () => {
 
   const { student, isStudentLoading, isStudentError } = useStudentById(id);
   const { tasks, isTasksLoading, isTasksError } = useTasks(id);
-  console.log(tasks);
-  console.log(tasks?.filter((task) => task.student.toString() === id))
 
   return (
     <HomeTemplate>
@@ -44,7 +42,7 @@ const TasksView = () => {
           {!isTasksLoading && !isTasksError && (
             <CustomSelect
               title="Wybierz zachowanie"
-              data={tasks?.filter((task) => task.student.toString() === id)}
+              data={tasks}
               btnTitle="Przyznaj punkty"
             />
           )}

@@ -23,7 +23,7 @@ const TasksBar = ({ handlePanel, panel, studentData }: any) => {
   useEffect(() => {
     setActivePanel(panel);
   }, [panel]);
-// console.log(tasks,tasks?.filter((task: any) => task?.student === id))
+  
   return (
     <ActionsTemplate action={activePanel === 'tasks' ? 'true' : 'false'}>
       <ProfileTopbar studentData={studentData} />
@@ -37,7 +37,6 @@ const TasksBar = ({ handlePanel, panel, studentData }: any) => {
           <CustomSelect
             title="Wybierz zachowanie"
             data={tasks}
-            // data={tasks?.filter((task: any) => task.student === id)}
             btnTitle="Przyznaj punkty"
           />
         )}
