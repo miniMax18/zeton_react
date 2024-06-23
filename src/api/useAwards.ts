@@ -1,5 +1,7 @@
 import { ENDPOINT } from '../const/endpoints.const';
 import useSWR from 'swr';
+import axiosInstance from './axios';
+import { AxiosResponse } from 'axios';
 
 type AwardObject = {
   id: number;
@@ -15,19 +17,20 @@ type UseAwardsObjectDataResponse = {
 };
 
 type GetPrizesByFetcher = {
-  prizes: AwardObject[];
+  data: AwardObject[];
 };
 
-const fetcher = (...args: any[]) =>
-  fetch(...(args as [any])).then((res) => res.json());
+const fetcher = async (
+  url: string,
+): Promise<AxiosResponse<any>> =>
+  axiosInstance().get(url);
 
 const useAwards = (id: any): UseAwardsObjectDataResponse => {
-  const URL = process.env.VITE_REACT_APP_API_URL + ENDPOINT.prizesId.replace("{:id}", id)
-  const { data, error } = useSWR<GetPrizesByFetcher>(URL, fetcher);
+  const { data, error } = useSWR<GetPrizesByFetcher>(ENDPOINT.prizesId.replace('{:id}', id), fetcher);
 
   return {
-    awards: data?.prizes,
-    isAwardsLoading: !error && (!data || !data.prizes),
+    awards: data?.data,
+    isAwardsLoading: !error && (!data || !data.data),
     isAwardsError: !!error,
   };
 };
