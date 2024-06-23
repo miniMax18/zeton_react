@@ -26,7 +26,6 @@ const fetcher = async (
   axiosInstance().get(url);
 
 const useAwards = (id: any): UseAwardsObjectDataResponse => {
-  //const URL = process.env.VITE_REACT_APP_API_URL + ENDPOINT.prizesId.replace("{:id}", id)
   const { data, error } = useSWR<GetPrizesByFetcher>(ENDPOINT.prizesId.replace('{:id}', id), fetcher);
 
   return {
