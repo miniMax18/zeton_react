@@ -1,13 +1,10 @@
-//import {PropTypes}  from "react/prop-types"'
-//import DEFAULT_IMAGE from "../../../images/icons/dist_/ProfileUser";
-//import STAR_ICON from "../../../images/icons/dist_/Star";
-import styled, { IStyledComponent } from 'styled-components';
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
+import React from 'react';
 import Paragraph from '../../atoms/Paragraph/Paragraph';
 import ProfileImage from '../../atoms/ProfileImage/ProfileImage';
 import STAR_ICON_SVG from '/star.svg';
 import ReturnButton from '../../atoms/Buttons/ReturnButton';
-import { NavLink } from 'react-router-dom';
-import React from 'react';
 import ProfileImageSVG from '/profile-user.svg';
 import { ThemeTypes } from '../../../theme/appTheme';
 

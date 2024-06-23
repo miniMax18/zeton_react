@@ -1,9 +1,9 @@
+import React from 'react';
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './api/store';
 import { HelmetProvider } from 'react-helmet-async';
-import React from 'react';
 
 const Wrapper = (children) => {
   return (

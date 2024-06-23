@@ -17,25 +17,17 @@
 		"plugin:import/typescript"
 		//"airbnb-base"
 	],
-	"settings": {
-		"import/resolver": {
-		  "alias": {
-			"map": [
-			  ["@", "./src"]
-			]
-		  }
-		}
-	  },
+
 	
 	"rules": {
 		// sort imports
 		"import/order": "error",
+		"import/no-named-as-default": 0,
 
 		// no let exports
 		"import/no-mutable-exports": "error",
 
 		"import/no-cycle": "error",
-		"import/no-default-export": "error",
 
 		// allow {} even though it's unsafe but comes handy
 		"@typescript-eslint/ban-types": [
@@ -44,15 +36,6 @@
 				"types": {
 					"{}": false
 				}
-			}
-		],
-
-		"@typescript-eslint/consistent-type-imports": [
-			"error",
-			{
-				"prefer": "type-imports",
-				"fixStyle": "inline-type-imports",
-				"disallowTypeAnnotations": false
 			}
 		],
 

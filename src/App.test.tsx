@@ -1,8 +1,8 @@
-import { describe, it, expect, test, vi } from 'vitest'; // vi have a mock feature
-import { render } from '@testing-library/react';
-import App from './App';
 import React from 'react';
+import { describe, it, expect, test } from 'vitest'; // vi have a mock feature
+import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
+import App from './App';
 
 test('demo', () => {
   expect(true).toBe(true);

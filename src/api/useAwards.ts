@@ -1,5 +1,5 @@
-import { ENDPOINT } from '../const/endpoints.const';
 import useSWR from 'swr';
+import { ENDPOINT } from '../const/endpoints.const';
 
 type AwardObject = {
   id: number;
@@ -22,7 +22,8 @@ const fetcher = (...args: any[]) =>
   fetch(...(args as [any])).then((res) => res.json());
 
 const useAwards = (id: any): UseAwardsObjectDataResponse => {
-  const URL = process.env.VITE_REACT_APP_API_URL + ENDPOINT.prizesId.replace("{:id}", id)
+  const URL =
+    process.env.VITE_REACT_APP_API_URL + ENDPOINT.prizesId.replace('{:id}', id);
   const { data, error } = useSWR<GetPrizesByFetcher>(URL, fetcher);
 
   return {

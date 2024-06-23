@@ -1,8 +1,8 @@
+import React from 'react';
 import styled from 'styled-components';
 import DEFAULT_IMAGE_SVG from '/profile-user.svg';
 import ProfileImage from '../../atoms/ProfileImage/ProfileImage';
 import STAR_ICON_SVG from '/star.svg';
-import React from 'react';
 
 const StyledProfileTopbar = styled.header`
   position: fixed;
@@ -61,7 +61,6 @@ const ProfileTopbar = ({
 }: {
   studentData: StudentDataTypes;
 }): JSX.Element => {
-
   let { image, name, points }: StudentDataTypes = studentData;
 
   // <StyledProfileImage style={{backgroundImage: image? `url(${image})`:`url(${image})`}} alt=""/>

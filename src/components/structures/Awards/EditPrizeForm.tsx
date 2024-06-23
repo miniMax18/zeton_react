@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AddButton, DeleteButtonText } from '../../atoms/Buttons/LightButtons';
 import {
   StyledForm,
@@ -6,7 +6,6 @@ import {
   StyledLabel,
   StyledRow,
 } from '../../atoms/Form/Form';
-import React from 'react';
 
 type PrizeTypes = {
   value: string | number | readonly string[] | undefined;

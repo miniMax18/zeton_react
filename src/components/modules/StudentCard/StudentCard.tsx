@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
+import React from 'react';
+import styled from 'styled-components';
 import Paragraph from '../../atoms/Paragraph/Paragraph';
 import ProfileImage from '../../atoms/ProfileImage/ProfileImage';
 import ProfileDefaultImage_SVG from '/profile-user.svg';
-import styled from 'styled-components';
-import React from 'react';
 import { ThemeTypes } from '../../../theme/appTheme';
 
 interface StyledStudentCardInterface {
@@ -39,7 +39,7 @@ type PropTypesStudentCard = {
 const StudentCard = ({ name, studentId, image }: PropTypesStudentCard) => {
   return (
     <StyledStudentCard to={`/${studentId}`}>
-      <ProfileImage src={(image) ? image.toString() : ProfileDefaultImage_SVG} />
+      <ProfileImage src={image ? image.toString() : ProfileDefaultImage_SVG} />
       <StyledName big={true}>{name}</StyledName>
     </StyledStudentCard>
   );

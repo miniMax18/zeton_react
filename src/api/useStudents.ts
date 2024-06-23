@@ -1,7 +1,7 @@
-import { ENDPOINT } from "../const/endpoints.const";
-import useSWR from "swr";
-import type {AxiosResponse} from "axios";
-import axiosInstance from "./axios.ts";
+import useSWR from 'swr';
+import type { AxiosResponse } from 'axios';
+import { ENDPOINT } from '../const/endpoints.const';
+import axiosInstance from './axios.ts';
 
 type StudentObject = {
   pk: number;
@@ -21,12 +21,13 @@ type GetStudentsByFetcher = {
 
 // adding SWR
 // const fetcher = (...args: any) => fetch(...args as [any]).then((res) => res.json());
-const fetcher = async (
-  url: string,
-): Promise<AxiosResponse<any>> =>
+const fetcher = async (url: string): Promise<AxiosResponse<any>> =>
   axiosInstance().get(url);
 const useStudents = (): UseStudentObjectDataResponse => {
-  const { data, error } = useSWR<GetStudentsByFetcher>(ENDPOINT.studentsList, fetcher);
+  const { data, error } = useSWR<GetStudentsByFetcher>(
+    ENDPOINT.studentsList,
+    fetcher
+  );
 
   return {
     students: data?.data,

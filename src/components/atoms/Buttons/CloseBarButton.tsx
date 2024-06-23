@@ -1,7 +1,7 @@
+import React from 'react';
 import styled from 'styled-components';
 import ARROW_ICON_SVG from '/arrow_back-24px.svg';
 import EXIT_ICON_SVG from '/exit.svg';
-import React from 'react';
 import type { ThemeTypes } from '../../../theme/appTheme';
 
 interface StyledCloseBarButtonInterface {

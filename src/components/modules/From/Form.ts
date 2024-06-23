@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import type { ThemeTypes } from '@/theme/appTheme';
+import { ThemeTypes } from '../../../theme/appTheme.ts';
 
 interface StyledInputInterface {
   theme: ThemeTypes;
