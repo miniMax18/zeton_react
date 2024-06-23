@@ -66,7 +66,6 @@ const StyledNavbar = styled.div<StyledNavbarInterface>`
 
 const Navbar = (): JSX.Element => {
   let { id } = useParams();
-  //console.log(`${id}`);
 
   //Example of usage another option to implement image below:
   //import FromJSXElementToDataUri from "../../utils/FromSVGToDataUri";

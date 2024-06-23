@@ -40,7 +40,6 @@ const StudentTemplate = ({ name, points, image, studentId }: any) => {
       image: image || null,
     };
     Object.assign(obj, newObj);
-    console.log(newObj);
     setStudentData(obj);
   }, [name, points, image]);
 

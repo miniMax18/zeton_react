@@ -62,7 +62,6 @@ type PropsTypeLiElement = {
 };
 
 const LiElement = (props: PropsTypeLiElement) => {
-  console.log(props);
   return (
     <StyledLiElement>
       <TextRow>

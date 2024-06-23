@@ -43,7 +43,6 @@ const AwardsList = ({ awards, studentId }: any) => {
   };
 
   const editPrize = (prize: any) => {
-    // console.log(prize);
     setEditing(true);
     setCurrentPrize({ id: prize.id, name: prize.text, value: prize.points });
   };
