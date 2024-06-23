@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from '@/components/atoms/Buttons/Button';
-import CustomArrow from '@/components/atoms/Buttons/CustomArrow';
+import Button from '../../atoms/Buttons/Button.ts';
+import CustomArrow from '../../atoms/Buttons/CustomArrow.ts';
 
 const StyledBlueArrow = styled(CustomArrow)`
   &::before {

@@ -1,4 +1,4 @@
-import styled, { IStyledComponent } from 'styled-components';
+import styled from 'styled-components';
 import type { ThemeTypes } from '../../../theme/appTheme';
 
 interface ButtonInterface {

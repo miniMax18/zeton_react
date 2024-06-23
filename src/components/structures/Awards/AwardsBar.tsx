@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReturnButton from '../../atoms/Buttons/ReturnButton';
 import {
   Subheading,
@@ -9,7 +9,6 @@ import ActionsTemplate from '../../templates/ActionsTemplate';
 import { StyledContainer } from '../../atoms/Sections/Containers';
 import CustomSelect from '../../modules/CustomSelect/CustomSelect';
 import { dataa as datamock } from '../../../mockyClient';
-import React from 'react';
 
 type AwardsBarPropTypes = {
   points: any;

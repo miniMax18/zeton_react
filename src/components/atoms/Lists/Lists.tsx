@@ -1,8 +1,7 @@
+import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 import { DeleteButton, EditButton } from '../Buttons/LightButtons';
-import type { ReactNode } from 'react';
 import type { ThemeTypes } from '../../../theme/appTheme';
-import React from 'react';
 interface ListsStyledInterface {
   theme?: ThemeTypes;
 }
@@ -63,7 +62,6 @@ type PropsTypeLiElement = {
 };
 
 const LiElement = (props: PropsTypeLiElement) => {
-  console.log(props);
   return (
     <StyledLiElement>
       <TextRow>

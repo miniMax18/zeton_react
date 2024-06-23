@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Heading } from '../components/atoms/Heading/Heading.ts';
 import MainBox from '../components/atoms/Sections/MainBox.ts';
 import { StyledArticle } from '../components/atoms/Sections/Article.ts';
@@ -6,13 +7,12 @@ import {
   StyledForm,
   StyledInput,
   StyledLabel,
-} from "../components/atoms/Form/Form.ts";
-import { type User } from "../api/Authentication/userTypes.ts";
-import Button from "../components/atoms/Buttons/Button.ts";
-import useAuthenticateUser from "../api/Authentication/authenticateUser.ts";
-import { useTokenDispatch } from "../providers/AuthProvider.tsx";
-import { setToken } from "../providers/authenticationActions.ts";
-import { useNavigate } from "react-router-dom";
+} from '../components/atoms/Form/Form.ts';
+import { type User } from '../api/Authentication/userTypes.ts';
+import Button from '../components/atoms/Buttons/Button.ts';
+import useAuthenticateUser from '../api/Authentication/authenticateUser.ts';
+import { useTokenDispatch } from '../providers/AuthProvider.tsx';
+import { setToken } from '../providers/authenticationActions.ts';
 
 const Login = () => {
   const [formData, setFormData] = useState<User>({
@@ -35,7 +35,7 @@ const Login = () => {
     });
 
     setToken(response.data.access, dispatch);
-    navigate("/")
+    navigate('/');
   };
 
   return (

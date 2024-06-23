@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Heading, Subheading } from '../../atoms/Heading/Heading';
 import MainBox from '../../atoms/Sections/MainBox';
-import LiElement from '../../atoms/Lists/Lists';
-import { LiDateElem } from '../../atoms/Lists/Lists';
 import { StyledArticle } from '../../atoms/Sections/Article';
+import LiElement, {
+  StyledUl,
+  StyledDate,
+  LiDateElem,
+} from '../../atoms/Lists/Lists';
 import AddPrizeForm from './AddPrizeForm';
 import EditPrizeForm from './EditPrizeForm';
-import { StyledUl, StyledDate } from '../../atoms/Lists/Lists';
 
 const AwardsList = ({ awards, studentId }: any) => {
   const [prizes, setPrizes] = useState(awards);
@@ -41,7 +43,6 @@ const AwardsList = ({ awards, studentId }: any) => {
   };
 
   const editPrize = (prize: any) => {
-    // console.log(prize);
     setEditing(true);
     setCurrentPrize({ id: prize.id, name: prize.text, value: prize.points });
   };

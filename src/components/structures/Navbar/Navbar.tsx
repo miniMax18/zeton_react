@@ -3,7 +3,6 @@
 //import Home24PxSVG from "../../../images/icons/home-24px.svg";
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
-import NavButton from '../../modules/NavButton/NavButton';
 // import Home24PxSVG from "/home-24px.svg";
 // import TrophySVG from "/trophy.svg";
 // import SentimentVeryDissatisfied24PxSVG from "/sentiment_very_dissatisfied-24px.svg";
@@ -11,6 +10,7 @@ import NavButton from '../../modules/NavButton/NavButton';
 // import Settings24PxSVG from "/settings-24px.svg";
 import React from 'react';
 import { JSX } from 'react/jsx-runtime';
+import NavButton from '../../modules/NavButton/NavButton';
 import { ThemeTypes } from '../../../theme/appTheme';
 import SvgHome from '../../../images/icons/dist_/Home24Px';
 import SvgTrophy from '../../../images/icons/dist_/Trophy';
@@ -66,7 +66,6 @@ const StyledNavbar = styled.div<StyledNavbarInterface>`
 
 const Navbar = (): JSX.Element => {
   let { id } = useParams();
-  //console.log(`${id}`);
 
   //Example of usage another option to implement image below:
   //import FromJSXElementToDataUri from "../../utils/FromSVGToDataUri";

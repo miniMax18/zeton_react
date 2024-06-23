@@ -1,7 +1,7 @@
-import { ENDPOINT } from '../const/endpoints.const';
 import useSWR from 'swr';
-import axiosInstance from './axios';
 import { AxiosResponse } from 'axios';
+import { ENDPOINT } from '../const/endpoints.const';
+import axiosInstance from './axios';
 
 type AwardObject = {
   id: number;
@@ -20,13 +20,14 @@ type GetPrizesByFetcher = {
   data: AwardObject[];
 };
 
-const fetcher = async (
-  url: string,
-): Promise<AxiosResponse<any>> =>
+const fetcher = async (url: string): Promise<AxiosResponse<any>> =>
   axiosInstance().get(url);
 
 const useAwards = (id: any): UseAwardsObjectDataResponse => {
-  const { data, error } = useSWR<GetPrizesByFetcher>(ENDPOINT.prizesId.replace('{:id}', id), fetcher);
+  const { data, error } = useSWR<GetPrizesByFetcher>(
+    ENDPOINT.prizesId.replace('{:id}', id),
+    fetcher
+  );
 
   return {
     awards: data?.data,

@@ -1,7 +1,6 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import ZetonFaviconBlue from './images/icons/zeton-favicon-blue.png';
-import HelmetDispatcher from 'react-helmet-async/lib/Dispatcher';
 
 const Head = (): JSX.Element => (
   <Helmet>

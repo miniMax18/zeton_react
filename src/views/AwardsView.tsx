@@ -1,20 +1,20 @@
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import HomeTemplate from '@/components/templates/HomeTemplate';
-import MainBox from '@/components/atoms/Sections/MainBox';
-import Navbar from '@/components/structures/Navbar/Navbar';
-import CustomSelect from '@/components/modules/CustomSelect/CustomSelect';
-import Loading from '@/components/atoms/Loading/Loading';
-import StudentHeader from '@/components/structures/StudentHeader/StudentHeader';
-import { StyledContainer } from '@/components/atoms/Sections/Containers';
+import HomeTemplate, {
+  StyledContainer,
+} from '../components/templates/HomeTemplate.tsx';
+import StudentHeader from '../components/structures/StudentHeader/StudentHeader.tsx';
+import Loading from '../components/atoms/Loading/Loading.tsx';
+import MainBox from '../components/atoms/Sections/MainBox.ts';
+import Navbar from '../components/structures/Navbar/Navbar.tsx';
+import CustomSelect from '../components/modules/CustomSelect/CustomSelect.tsx';
+import { useStudentById } from '../api/useStudentById.ts';
+import { useAwards } from '../api/useAwards.ts';
 import {
-  Subheading,
   StyledHeader,
   StyledHeading,
-} from '@/components/atoms/Heading/Heading';
-// funkcje-hooki swr
-import { useAwards } from '@/api/useAwards';
-import { useStudentById } from '@/api/useStudentById';
-import React from 'react';
+  Subheading,
+} from '../components/atoms/Heading/Heading.ts';
 
 const AwardsView = () => {
   const { id } = useParams();
