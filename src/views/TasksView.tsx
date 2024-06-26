@@ -34,7 +34,7 @@ const TasksView = () => {
         />
       )}
       <StyledHeader>
-        <StyledHeading big>Dodaj punkty</StyledHeading>
+        <StyledHeading >Dodaj punkty</StyledHeading>
       </StyledHeader>
       <MainBox>
         <StyledContainer>
@@ -43,7 +43,7 @@ const TasksView = () => {
           {!isTasksLoading && !isTasksError && (
             <CustomSelect
               title="Wybierz zachowanie"
-              data={tasks?.filter((task) => task.student.toString() === id)}
+              data={tasks}
               btnTitle="Przyznaj punkty"
             />
           )}
