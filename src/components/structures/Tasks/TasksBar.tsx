@@ -18,7 +18,7 @@ const TasksBar = ({ handlePanel, panel, studentData }: any) => {
   let { id } = useParams();
   const [activePanel, setActivePanel] = useState(panel);
   const { tasks, isTasksLoading, isTasksError } = useTasks(id);
-  // console.log(tasks);
+  console.log(tasks);
 
   useEffect(() => {
     setActivePanel(panel);
@@ -36,7 +36,7 @@ const TasksBar = ({ handlePanel, panel, studentData }: any) => {
         {!isTasksLoading && !isTasksError && (
           <CustomSelect
             title="Wybierz zachowanie"
-            data={tasks?.filter((task: any) => task.student === id)}
+            data={tasks}
             btnTitle="Przyznaj punkty"
           />
         )}
