@@ -95,7 +95,7 @@ const CustomSelect = ({
       return !isOpen;
     });
 
-  const onOptionClicked = (value: any, title: any) => () => {
+  const onOptionClicked = (value: any, title: any) => {
     if (!value) return;
     setSelectedOption(value);
     setIsOpen(false);

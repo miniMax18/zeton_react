@@ -32,7 +32,7 @@ const TasksView = () => {
         />
       )}
       <StyledHeader>
-        <StyledHeading big>Dodaj punkty</StyledHeading>
+        <StyledHeading >Dodaj punkty</StyledHeading>
       </StyledHeader>
       <MainBox>
         <StyledContainer>
