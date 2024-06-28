@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import CloseBarButton from '../../atoms/Buttons/CloseBarButton';
 import {
@@ -12,13 +12,11 @@ import CustomSelect from '../../modules/CustomSelect/CustomSelect';
 import ProfileTopbar from '../Topbar/ProfileTopbar';
 import { StyledContainer } from '../../atoms/Sections/Containers';
 import { useTasks } from '../../../api/useTasks';
-import React from 'react';
 
 const TasksBar = ({ handlePanel, panel, studentData }: any) => {
   let { id } = useParams();
   const [activePanel, setActivePanel] = useState(panel);
   const { tasks, isTasksLoading, isTasksError } = useTasks(id);
-  console.log(tasks);
 
   useEffect(() => {
     setActivePanel(panel);

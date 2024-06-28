@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom';
+import React from 'react';
 import HomeTemplate from '../components/templates/HomeTemplate';
 import MainBox from '../components/atoms/Sections/MainBox';
 import Navbar from '../components/structures/Navbar/Navbar';
@@ -11,17 +12,14 @@ import {
   StyledHeader,
   StyledHeading,
 } from '../components/atoms/Heading/Heading';
-// funkcje-hooki swr
 import { useTasks } from '../api/useTasks';
 import { useStudentById } from '../api/useStudentById';
-import React from 'react';
 
 const TasksView = () => {
   let { id } = useParams();
 
   const { student, isStudentLoading, isStudentError } = useStudentById(id);
   const { tasks, isTasksLoading, isTasksError } = useTasks(id);
-  console.log(tasks);
 
   return (
     <HomeTemplate>

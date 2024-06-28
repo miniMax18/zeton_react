@@ -1,11 +1,10 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from '../atoms/Buttons/Button';
 import StudentHeader from '../structures/StudentHeader/StudentHeader';
 import { ROUTE_NAME } from '../../const/routing.const';
 import TasksBar from '../structures/Tasks/TasksBar';
-import React from 'react';
 
 const StyledButtonsGroup = styled.div`
   display: flex;
@@ -41,7 +40,6 @@ const StudentTemplate = ({ name, points, image, studentId }: any) => {
       image: image || null,
     };
     Object.assign(obj, newObj);
-    console.log(newObj);
     setStudentData(obj);
   }, [name, points, image]);
 

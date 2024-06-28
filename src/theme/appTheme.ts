@@ -1,5 +1,3 @@
-//import type CSS from 'styled-components';
-
 export type ThemeTypes = {
   background?: string;
   grey: string;

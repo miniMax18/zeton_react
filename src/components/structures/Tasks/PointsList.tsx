@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Heading, Subheading } from '../../atoms/Heading/Heading';
 import { StyledArticle } from '../../atoms/Sections/Article';
 import MainBox from '../../atoms/Sections/MainBox';
@@ -6,7 +6,6 @@ import MainBox from '../../atoms/Sections/MainBox';
 import LiElement, { StyledUl } from '../../atoms/Lists/Lists';
 import AddPointsForm from './AddPointsForm';
 import EditPointsForm from './EditPointsForm';
-import React from 'react';
 
 const PointsList = ({ tasksList, studentId }: any) => {
   const [tasks, setTasks] = useState(tasksList);
