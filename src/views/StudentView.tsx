@@ -8,15 +8,17 @@ import { useStudentById } from '../api/useStudentById';
 const StudentView = () => {
   const pathId = window.location.pathname.replace('/', '');
   const { student, isStudentLoading, isStudentError } = useStudentById(pathId);
+
+  if (isStudentLoading) return <Loading />;
+  if (isStudentError) return <h1>Błąd wyświetlan studenta</h1>;
+
   return (
     <HomeTemplate>
-      {isStudentLoading && !isStudentError && <Loading />}
-      {!isStudentLoading && !isStudentError && (
+      {student && student.first_name && (
         <StudentTemplate
-          name={student?.first_name}
-          points={student?.total_points}
+          name={student.first_name}
+          points={student.total_points}
           studentId={pathId}
-          image={undefined}
         />
       )}
       <Navbar />
