@@ -1,8 +1,8 @@
 export interface Authentication {
-  token: string | null;
+  token: string;
 }
 
 export interface TokenAction {
   type: 'set' | 'clear';
-  token: string | null;
+  token: string;
 }
