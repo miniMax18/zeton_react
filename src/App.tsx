@@ -5,7 +5,7 @@ import HomeView from './views/HomeView';
 import StudentView from './views/StudentView';
 import TasksView from './views/TasksView';
 import InfoView from './views/InfoView';
-import AwardsView from './views/AwardsView';
+import AwardsView from './views/Award/AwardsView.tsx';
 import ConsequencesView from './views/ConsequencesView';
 import SettingsView from './views/SettingsView';
 import Head from './Head';

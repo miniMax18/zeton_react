@@ -8,7 +8,7 @@ interface LightButtonInterface {
   theme: ThemeTypes;
 }
 
-const LightButton = styled.button<LightButtonInterface>`
+export const LightButton = styled.button<LightButtonInterface>`
   color: ${({ theme }) => theme.primary};
   font-size: ${({ theme }) => theme.fontSize.xs};
   text-transform: uppercase;
