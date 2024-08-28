@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import { StyledContainer } from '../../components/templates/HomeTemplate.tsx';
 import MainBox from '../../components/atoms/Sections/MainBox.ts';
 import {
@@ -15,8 +15,20 @@ import Button from '../../components/atoms/Buttons/Button.ts';
 import { Award } from './awardTypes.ts';
 
 const AddAward = () => {
-  const { id } = useParams();
+  // const { id } = useParams();
   const [formData, setFormData] = useState<Award>({ name: '', value: 0 });
+
+  const onValueChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const parsedValue = parseInt(event.target.value);
+    if (!isNaN(parsedValue)) {
+      setFormData({ ...formData, value: parsedValue });
+    }
+  };
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    
+  };
 
   return (
     <>
@@ -25,9 +37,7 @@ const AddAward = () => {
       </StyledHeader>
       <MainBox>
         <StyledContainer>
-          <StyledForm
-          // onSubmit={() => handleSubmit}
-          >
+          <StyledForm onSubmit={handleSubmit}>
             <StyledLabel htmlFor="name">Nazwa:</StyledLabel>
             <StyledInput
               type="text"
@@ -44,17 +54,16 @@ const AddAward = () => {
               type="number"
               name="value"
               id="value"
-              value={formData.value}
-              onChange={(event) =>
-                setFormData({ ...formData, value: event.target.value})
-              }
+              min="1"
+              step="1"
+              value={formData.value ? formData.value : ''}
+              onChange={onValueChange}
               required
             />
             {/* {error && <div>Błąd.</div>} */}
             <Button
-              type="button"
+              type="submit"
               // disabled={isMutating}
-              // onClick={(event) => handleSubmit(event)}
             >
               Dodaj nagrodę
             </Button>
