@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { StyledContainer } from '../../components/templates/HomeTemplate.tsx';
 import MainBox from '../../components/atoms/Sections/MainBox.ts';
 import {
@@ -12,11 +12,18 @@ import {
   StyledLabel,
 } from '../../components/atoms/Form/Form.ts';
 import Button from '../../components/atoms/Buttons/Button.ts';
+import useAddAward from '../../api/Award/useAddAward.ts';
+
 import { Award } from './awardTypes.ts';
 
 const AddAward = () => {
-  // const { id } = useParams();
-  const [formData, setFormData] = useState<Award>({ name: '', value: 0 });
+  const { id } = useParams();
+  const [formData, setFormData] = useState<Award>({
+    name: '',
+    value: 0,
+  });
+
+  const navigate = useNavigate();
 
   const onValueChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const parsedValue = parseInt(event.target.value);
@@ -25,9 +32,17 @@ const AddAward = () => {
     }
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const { trigger, isMutating, error } = useAddAward(id);
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    
+    const response = await trigger({
+      name: formData.name,
+      value: formData.value,
+    });
+    console.log(response);
+
+    navigate('/');
   };
 
   return (
@@ -61,10 +76,7 @@ const AddAward = () => {
               required
             />
             {/* {error && <div>Błąd.</div>} */}
-            <Button
-              type="submit"
-              // disabled={isMutating}
-            >
+            <Button type="submit" disabled={isMutating}>
               Dodaj nagrodę
             </Button>
           </StyledForm>
