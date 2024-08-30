@@ -14,16 +14,16 @@ const AwardsView = () => {
 
   const navigate = useNavigate();
 
+  if (isStudentError) return null;
+  if (isStudentLoading) return <Loading />;
+
   return (
     <HomeTemplate>
-      {isStudentLoading && !isStudentError && <Loading />}
-      {!isStudentLoading && !isStudentError && (
-        <StudentHeader
-          name={student?.first_name}
-          points={student?.total_points}
-          studentId={id}
-        />
-      )}
+      <StudentHeader
+        name={student?.first_name}
+        points={student?.total_points}
+        studentId={id}
+      />
       <Button onClick={() => navigate(`.${AWARDS_SUB_ROUTES.add}`)}>
         Dodaj nagrodę
       </Button>
