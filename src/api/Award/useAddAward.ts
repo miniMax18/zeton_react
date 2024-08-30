@@ -1,6 +1,6 @@
 import { AxiosResponse } from 'axios';
-import useSWRMutation from 'swr/dist/mutation';
-import { ENDPOINT } from '../../const/endpoints.const';
+import useSWRMutation from 'swr/mutation';
+import { prizesUrl } from '../../const/endpoints.const';
 import axiosInstance from '../axios';
 
 type AddAwardBody = {
@@ -19,9 +19,10 @@ const fetcher = async (
   { arg }: { arg: AddAwardBody }
 ): Promise<AxiosResponse<AddAwardBody[]>> => axiosInstance().post(url, arg);
 
-const useAddAward = (id: number) => {
-  const postUserUrl = ENDPOINT.prizesId.replace('{:id}', id);
-  const { trigger, isMutating,  error, } = useSWRMutation(postUserUrl, fetcher);
+
+const useAddAward = (id: string) => {
+  const postAwardUrl = prizesUrl(id)
+  const { trigger, isMutating,  error, } = useSWRMutation(postAwardUrl, fetcher);
 
   return {
     trigger,

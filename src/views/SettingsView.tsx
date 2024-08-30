@@ -9,7 +9,7 @@ import ButtonBar from '../components/modules/ButtonBar/ButtonBar';
 import MainBox from '../components/atoms/Sections/MainBox';
 import Loading from '../components/atoms/Loading/Loading';
 import { useStudentById } from '../api/useStudentById';
-import { useAwards } from '../api/useAwards';
+import { useAwards } from '../api/Award/useAwards';
 import { useTasks } from '../api/useTasks';
 
 const SettingsView = () => {

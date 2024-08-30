@@ -4,7 +4,7 @@ import { StyledContainer } from '../../components/templates/HomeTemplate.tsx';
 import Loading from '../../components/atoms/Loading/Loading.tsx';
 import MainBox from '../../components/atoms/Sections/MainBox.ts';
 import CustomSelect from '../../components/modules/CustomSelect/CustomSelect.tsx';
-import { useAwards } from '../../api/useAwards.ts';
+import { useAwards } from '../../api/Award/useAwards.ts';
 import {
   StyledHeader,
   StyledHeading,
