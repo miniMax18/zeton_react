@@ -8,12 +8,6 @@ type AddAwardBody = {
   value: number;
 };
 
-type AddAwardDataResponse = {
-  data?: AddAwardBody[];
-  error: boolean;
-  isLoading: boolean;
-};
-
 const fetcher = async (
   url: string,
   { arg }: { arg: AddAwardBody }
