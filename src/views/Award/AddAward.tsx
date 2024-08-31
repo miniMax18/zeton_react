@@ -40,7 +40,8 @@ const AddAward = () => {
       name: formData.name,
       value: formData.value,
     });
-    console.log(response);
+
+    //@todo here we should handle the success state properly
 
     navigate('/');
   };
@@ -75,7 +76,7 @@ const AddAward = () => {
               onChange={onValueChange}
               required
             />
-            {/* {error && <div>Błąd.</div>} */}
+            {error && <div>Wystąpił błąd podczas dodawania nagrody. Spróbuj jeszcze raz lub skontaktuj się z administratorem.</div>}
             <Button type="submit" disabled={isMutating}>
               Dodaj nagrodę
             </Button>
