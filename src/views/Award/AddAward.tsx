@@ -71,7 +71,6 @@ const AddAward = () => {
               id="value"
               min="1"
               step="1"
-              value={formData.value ? formData.value : ''}
               onChange={onValueChange}
               required
             />
