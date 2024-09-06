@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { SUB_ROUTES_NAME } from '../../const/routing.const.ts';
 import { StyledContainer } from '../../components/templates/HomeTemplate.tsx';
 import MainBox from '../../components/atoms/Sections/MainBox.ts';
 import {
@@ -41,9 +42,7 @@ const AddAward = () => {
       value: formData.value,
     });
 
-    //@todo here we should handle the success state properly
-
-    navigate('/');
+    navigate(`/${id}${SUB_ROUTES_NAME.awards}`)
   };
 
   return (
