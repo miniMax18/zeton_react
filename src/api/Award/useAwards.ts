@@ -1,7 +1,7 @@
 import useSWR from 'swr';
 import { AxiosResponse } from 'axios';
-import { ENDPOINT } from '../const/endpoints.const';
-import axiosInstance from './axios';
+import { ENDPOINT } from '../../const/endpoints.const';
+import axiosInstance from '.././axios';
 
 type AwardObject = {
   id: number;

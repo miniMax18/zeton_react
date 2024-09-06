@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from '../atoms/Buttons/Button';
 import StudentHeader from '../structures/StudentHeader/StudentHeader';
-import { ROUTE_NAME } from '../../const/routing.const';
+import { AWARDS_SUB_ROUTES, SUB_ROUTES_NAME } from '../../const/routing.const';
 
 const StyledButtonsGroup = styled.div`
   display: flex;
@@ -16,27 +16,18 @@ const StyledButtonsGroup = styled.div`
 type StudentTemplateProps = {
   name: string;
   points: number;
-  studentId: string;
 };
 
-const StudentTemplate = ({ name, points, studentId }: StudentTemplateProps) => {
+const StudentTemplate = ({ name, points }: StudentTemplateProps) => {
   const navigate = useNavigate();
-
-  const onClickAddPoints = () => {
-    navigate('./tasks');
-  };
 
   return (
     <>
       <StudentHeader name={name} points={points} />
       <StyledButtonsGroup>
-        <Button onClick={onClickAddPoints}>Dodaj punkty</Button>
-        <Link to={ROUTE_NAME.awards.replace(':id', studentId)}>
-          <Button outline={'true'}>Przyznaj nagrodę</Button>
-        </Link>
-        <Link to={ROUTE_NAME.consequences.replace(':id', studentId)}>
-          <Button outline={'true'}>Daj konsekwencję</Button>
-        </Link>
+        <Button onClick={() => navigate(`.${SUB_ROUTES_NAME.tasks}}`)}>Dodaj punkty</Button>
+          <Button onClick={() => navigate(`.${SUB_ROUTES_NAME.awards}${AWARDS_SUB_ROUTES.grant}`)} outline={'true'}>Przyznaj nagrodę</Button>
+          <Button onClick={() => navigate(`.${SUB_ROUTES_NAME.consequences}`)} outline={'true'}>Daj konsekwencję</Button>
       </StyledButtonsGroup>
     </>
   );
