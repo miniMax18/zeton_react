@@ -8,7 +8,7 @@ import {
 } from './authenticationReducer.ts';
 
 export const AuthenticationContext = createContext<Authentication>({
-  token: null,
+  token: "",
 });
 export const TokenDispatchContext = createContext<React.Dispatch<TokenAction>>(
   {} as React.Dispatch<TokenAction>
@@ -23,9 +23,9 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   const [authentication, dispatch] = useReducer<AuthenticationReducer>(
     authenticationReducer,
-    {
-      token: null,
-    }
+      {
+        token: ""
+      }
   );
 
   useEffect(() => {
