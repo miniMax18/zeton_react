@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import AwardsList from './views/Award/AwardsList.tsx';
 import MainTemplate from './components/templates/MainTemplate';
 import HomeView from './views/HomeView';
 import StudentView from './views/StudentView';
@@ -44,6 +45,10 @@ function App(): React.ReactNode {
             <Route
               path={`${BASE_ROUTES_NAME.student}${SUB_ROUTES_NAME.awards}${AWARDS_SUB_ROUTES.grant}`}
               element={<GrantAward />}
+            />
+            <Route
+              path={`${BASE_ROUTES_NAME.student}${SUB_ROUTES_NAME.awards}${AWARDS_SUB_ROUTES.list}`}
+              element={<AwardsList />}
             />
           </Routes>
         </MainTemplate>

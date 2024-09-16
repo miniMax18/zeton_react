@@ -14,4 +14,5 @@ export const SUB_ROUTES_NAME = {
 export const AWARDS_SUB_ROUTES = {
   add: '/add',
   grant: '/grant',
+  list: '/list',
 };
