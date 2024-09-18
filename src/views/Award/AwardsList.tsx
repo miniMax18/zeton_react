@@ -22,17 +22,20 @@ const AwardsList = () => {
       <MainBox>
         <StyledContainer>
           <Subheading>Wykorzystane punkty</Subheading>
-          {isAwardsLoading && !isAwardsError && <Loading />}
+          {isAwardsError && (
+            <div>
+              Wystąpił błąd podczas wczytywania danych, proszę odświeżyć stronę.
+            </div>
+          )}
+          {isAwardsLoading && <Loading />}
           {!isAwardsLoading && !isAwardsError && (
-           <div>
-             {awards?.map((option) => (
-                  <li
-                    key={option.id}
-                  >
-                    {option.name} <span>{option.value} pkt</span>
-                  </li>
-                ))}
-           </div>
+            <div>
+              {awards?.map((award) => (
+                <li key={award.id}>
+                  {award.name} <span>{award.value} pkt</span>
+                </li>
+              ))}
+            </div>
           )}
         </StyledContainer>
       </MainBox>
