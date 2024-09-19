@@ -16,7 +16,6 @@ const AwardsContainer = ({ children }: { children: React.ReactNode }) => {
       </StyledHeader>
       <MainBox>
         <StyledContainer>
-          <Subheading>Wykorzystane punkty</Subheading>
           {children}
         </StyledContainer>
       </MainBox>
