@@ -5,7 +5,6 @@ import MainBox from '../../components/atoms/Sections/MainBox.ts';
 import {
   StyledHeader,
   StyledHeading,
-  Subheading,
 } from '../../components/atoms/Heading/Heading.ts';
 
 const AwardsContainer = ({ children }: { children: React.ReactNode }) => {

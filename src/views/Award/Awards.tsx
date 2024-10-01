@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import Loading from '../../components/atoms/Loading/Loading.tsx';
 import { useAwards } from '../../api/Award/useAwards.ts';
 import AwardsContainer from './AwardsContainer.tsx';
+import AwardsList from './AwardsList.tsx';
 
 const Awards = () => {
   const { id } = useParams();
@@ -26,13 +27,11 @@ const Awards = () => {
 
   return (
     <AwardsContainer>
-      <div>
-        {awards?.map((award) => (
-          <li key={award.id}>
-            {award.name} <span>{award.value} pkt</span>
-          </li>
-        ))}
-      </div>
+      {awards ? 
+      <AwardsList awards={awards} /> 
+      : 
+      <div> Brak nagród. </div> 
+      }
     </AwardsContainer>
   );
 };

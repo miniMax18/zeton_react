@@ -1,14 +1,8 @@
 import useSWR from 'swr';
 import { AxiosResponse } from 'axios';
+import { AwardObject } from '../../../src/views/Award/types';
 import { ENDPOINT } from '../../const/endpoints.const';
 import axiosInstance from '.././axios';
-
-type AwardObject = {
-  id: number;
-  name: string;
-  value: number;
-  student: number;
-};
 
 type UseAwardsObjectDataResponse = {
   awards?: AwardObject[];
