@@ -30,6 +30,9 @@ const AwardsView = () => {
       <Button onClick={() => navigate(`.${AWARDS_SUB_ROUTES.grant}`)}>
         Przyznaj nagrodę
       </Button>
+      <Button onClick={() => navigate(`.${AWARDS_SUB_ROUTES.list}`)}>
+        Pokaż listę nagród
+      </Button>
       <Navbar />
     </HomeTemplate>
   );
