@@ -1,8 +1,8 @@
 import React from 'react';
-import { AwardObject } from './types';
+import { Award } from './types';
 
 
-const AwardsList = ({ awards }: { awards: AwardObject[] }) => {
+const AwardsList = ({ awards }: { awards: Award[] }) => {
   return (
     <div>
       <ul>

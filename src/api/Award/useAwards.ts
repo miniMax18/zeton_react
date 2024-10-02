@@ -1,17 +1,17 @@
 import useSWR from 'swr';
 import { AxiosResponse } from 'axios';
-import { AwardObject } from '../../../src/views/Award/types';
+import { Award } from '../../../src/views/Award/types';
 import { ENDPOINT } from '../../const/endpoints.const';
 import axiosInstance from '.././axios';
 
 type UseAwardsObjectDataResponse = {
-  awards?: AwardObject[];
+  awards?: Award[];
   isAwardsLoading: boolean;
   isAwardsError: boolean;
 };
 
 type GetPrizesByFetcher = {
-  data: AwardObject[];
+  data: Award[];
 };
 
 const fetcher = async (url: string): Promise<AxiosResponse<any>> =>

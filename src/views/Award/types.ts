@@ -1,4 +1,4 @@
-export type AwardObject = {
+export type Award = {
     id: number;
     name: string;
     value: number;
